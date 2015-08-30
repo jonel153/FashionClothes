@@ -12,6 +12,29 @@
 
 <link rel="stylesheet" href="style.css">
 
+<style type="text/css">
+#topmens {
+margin-top: 5px;
+
+background-color: #33FFCC;
+border: 1px solid gray;
+border-radius: 10px; 
+margin-bottom: 10px;
+width:70%;
+margin-left: 29.5%;
+opacity: 0.6;
+}	
+
+#middlebar{
+
+background-color: #33CC66;
+border: 1px solid gray;
+border-radius: 10px;
+opacity: 0.9;
+
+}
+</style>
+
 </head>
 
 <body>
@@ -98,16 +121,19 @@
 				</div>
 			</div>
 				
-			<div class="col-xs-8 col-xs-offset-1">
+			<div class="col-xs-9">
 				<div id="middlebar">
 
-					<div class="row well">
+					<div class="row" id="topmens">
 						<div id="mens">Mens top sale<img src="new.png" width="70px" height="70px"></div>
-						<hr>
+						
 
 					</div>
 					<div class="row">
-						<div class="col-xs-4">
+					<?php
+					include "load.php";
+					?>
+						<!--<div class="col-xs-4">
 							<div class="row well">
 								<div class="col-xs-12">
 									<a href="#"><img class="topsale" src="mens.jpg"><br>
@@ -137,7 +163,7 @@
 								</div>
 							</div>
 							
-						</div>
+						</div>-->
 					</div>
 
 				</div>
