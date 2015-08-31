@@ -15,23 +15,47 @@
 <style type="text/css">
 #topmens {
 margin-top: 5px;
-
-background-color: #33FFCC;
+margin-bottom: 30px;
+background-color: #62c2e4;
 border: 1px solid gray;
 border-radius: 10px; 
 margin-bottom: 10px;
 width:70%;
 margin-left: 29.5%;
-opacity: 0.6;
+font-family: "Trebuchet MS", Helvetica, sans-serif;
+}
+
+#topwomens {
+margin-top: 5px;
+
+background-color: #db9dbe;
+border: 1px solid gray;
+border-radius: 10px; 
+margin-bottom: 10px;
+width:70%;
+margin-left: 29.5%;
+font-family: "Trebuchet MS", Helvetica, sans-serif;
 }	
 
-#middlebar{
+.middlebar{
 
-background-color: #33CC66;
+background-color: #252525;
 border: 1px solid gray;
 border-radius: 10px;
-opacity: 0.9;
+margin-bottom: 50px;
+padding-bottom: 50px;
+}
 
+#topaccessories {
+margin-top: 5px;
+
+background-color: #c4e17f;
+border: 1px solid gray;
+border-radius: 10px; 
+margin-bottom: 10px;
+width:70%;
+margin-left: 29.5%;
+font-family: "Trebuchet MS", Helvetica, sans-serif;
 }
 </style>
 
@@ -122,7 +146,7 @@ opacity: 0.9;
 			</div>
 				
 			<div class="col-xs-9">
-				<div id="middlebar">
+				<div class="middlebar">
 
 					<div class="row" id="topmens">
 						<div id="mens">Mens top sale<img src="new.png" width="70px" height="70px"></div>
@@ -167,6 +191,44 @@ opacity: 0.9;
 					</div>
 
 				</div>
+
+
+
+				<div class="middlebar">
+
+					<div class="row" id="topwomens">
+						<div id="mens">Womens top sale<img src="new.png" width="70px" height="70px"></div>
+						
+
+					</div>
+					<div class="row">
+					<?php
+					include "womensload.php";
+					?>
+						
+							
+					</div>
+
+				</div>
+
+
+				<div class="middlebar">
+
+					<div class="row" id="topaccessories">
+						<div id="mens">Accessories top sale<img src="new.png" width="70px" height="70px"></div>
+						
+
+					</div>
+					<div class="row">
+					<?php
+					include "accessoriesload.php";
+					?>
+						
+							
+					</div>
+
+				</div>
+
 			</div>
 		</div>
 	</div>

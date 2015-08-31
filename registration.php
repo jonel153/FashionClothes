@@ -54,69 +54,70 @@ include "header.php";
 			<hr class="colorgraph">
 
 			<div id="reg">
-				
-				<div class="form-group">
-					<label for="fname">First name: </label>
-					<input type="text" class="form-control" id="fname" placeholder="Type your first name here...">
-				</div><br>
+				<form action="addusers.php" method="POST">
+					<div class="form-group">
+						<label for="fname">First name: </label>
+						<input type="text" class="form-control" id="fname" name="fname" placeholder="Type your first name here...">
+					</div><br>
 
 
-				<div class="form-group">
-					<label for="lname">Last name: </label>
-					<input type="text" class="form-control" id="lname" placeholder="Type your last name here...">
-				</div><br>
+					<div class="form-group">
+						<label for="lname">Last name: </label>
+						<input type="text" class="form-control" id="lname" name="lname" placeholder="Type your last name here...">
+					</div><br>
 
-				<div class="form-group">
-					<label for="mname">Middle name: </label>
-					<input type="text" class="form-control" id="mname" placeholder="Type your middle name here...">
-				</div><br>
+					<div class="form-group">
+						<label for="mname">Middle name: </label>
+						<input type="text" class="form-control" id="mname" name="mname" placeholder="Type your middle name here...">
+					</div><br>
 
-				<div class="form-group">
-					<label>Gender: </label><br>
-					<label class="checkbox-inline"> <input type="radio" name="gen" class="form-control" id="male">Male </label>
-					<label class="checkbox-inline"> <input type="radio" name="gen" class="form-control" id="male">Female </label>
-					
-				</div><br>
+					<div class="form-group">
+						<label>Gender: </label><br>
+						<label class="checkbox-inline"> <input type="radio" name="gen" class="form-control" value="Male">Male </label>
+						<label class="checkbox-inline"> <input type="radio" name="gen" class="form-control" value="Female">Female </label>
+						
+					</div><br>
 
-				<div class="form-group">
-					<label for="address">Address: </label>
-					<input type="text" class="form-control" id="address" placeholder="Type your Address here...">
-				</div><br>
+					<div class="form-group">
+						<label for="address">Address: </label>
+						<input type="text" class="form-control" id="address" name="address" placeholder="Type your Address here...">
+					</div><br>
 
-				<div class="form-group">
-					<label for="number">Phone number: </label>
-					<input type="text" class="form-control" id="number" placeholder="Type your phone number here...">
-				</div><br>
+					<div class="form-group">
+						<label for="number">Phone number: </label>
+						<input type="text" class="form-control" id="number" name="number" placeholder="Type your phone number here...">
+					</div><br>
 
-				<div class="form-group">
-					<label for="age">Age: </label>
-					<input type="number" class="form-control" id="age" placeholder="Type your age here...">
-				</div><br>
+					<div class="form-group">
+						<label for="age">Age: </label>
+						<input type="number" class="form-control" id="age" name="age" placeholder="Type your age here...">
+					</div><br>
 
-				<div class="form-group">
-					<label for="email">Email: </label>
-					<input type="text" class="form-control" id="email" placeholder="Type your email here...">
-				</div><br>
+					<div class="form-group">
+						<label for="email">Email: </label>
+						<input type="text" class="form-control" id="email" name="email" placeholder="Type your email here...">
+					</div><br>
 
-				<div class="form-group">
-					<label for="cemail">Confirm Email: </label>
-					<input type="text" class="form-control" id="cemail" placeholder="Confirm your email here...">
-				</div><br>
+					<div class="form-group">
+						<label for="cemail">Confirm Email: </label>
+						<input type="text" class="form-control" id="cemail" name="cemail" placeholder="Confirm your email here...">
+					</div><br>
 
-				<div class="form-group">
-					<label for="password">Password: </label>
-					<input type="password" class="form-control" id="password" placeholder="Type your password here...">
-				</div><br>
+					<div class="form-group">
+						<label for="password">Password: </label>
+						<input type="password" class="form-control" id="password" name="password" placeholder="Type your password here...">
+					</div><br>
 
-				<div class="form-group">
-					<label for="cpassword">Confirm Password: </label>
-					<input type="password" class="form-control" id="cpassword" placeholder="Confirm password here...">
-				</div><br>
+					<div class="form-group">
+						<label for="cpassword">Confirm Password: </label>
+						<input type="password" class="form-control" id="cpassword" name="cpassword" placeholder="Confirm password here...">
+					</div><br>
 
-				<div class="form-group">
-					
-					<input type="signup" value="Sign up" class="btn btn-success" id="signup">
-				</div><br>
+					<div class="form-group">
+						
+						<input type="submit" value="Sign up" class="btn btn-success" id="signup">
+					</div><br>
+				</form>
 			</div>
 		</div>
 			

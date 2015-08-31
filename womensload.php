@@ -10,7 +10,7 @@ mysql_select_db("rent", $con);
 
 
 
-$result = mysql_query('SELECT * FROM product WHERE category="Male"');
+$result = mysql_query('SELECT * FROM product WHERE category="Female"');
 
 $count = 1;
 	while($row = mysql_fetch_array($result)){
