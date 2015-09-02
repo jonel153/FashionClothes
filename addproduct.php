@@ -1,6 +1,6 @@
 <html>
 <head>
-<title>Registration Form</title>
+<title>Add product</title>
 
  <link rel="stylesheet" href="theme/superhero/bootstrap.css" media="screen">
  <link rel="stylesheet" href="theme/superhero/usebootstrap.css">
@@ -40,6 +40,7 @@ width: 40%;
 #reg input{
 font-size: 12px;
 height: 30px;
+padding-bottom: 5px;
 
 }
 
@@ -65,66 +66,62 @@ include "header.php";
 			<div id="reg">
 				<form action="addusers.php" method="POST">
 					<div class="form-group">
-						<label for="fname">First name: </label>
-						<input type="text" class="form-control" id="fname" name="fname" placeholder="Type your first name here...">
-					</div>
+						<label for="pname">Product name: </label>
+						<input type="text" class="form-control" id="pname" name="pname" placeholder="Type product name here...">
+					</div><br>
 
 
 					<div class="form-group">
-						<label for="lname">Last name: </label>
-						<input type="text" class="form-control" id="lname" name="lname" placeholder="Type your last name here...">
-					</div>
+						<label for="price">Price: </label>
+						<input type="number" class="form-control" id="price" name="price" placeholder="Type price here...">
+					</div><br>
 
 					<div class="form-group">
-						<label for="mname">Middle name: </label>
-						<input type="text" class="form-control" id="mname" name="mname" placeholder="Type your middle name here...">
-					</div>
+						<label for="fpic">Picture Front: </label>
+						<input type="file" id="fpic" name="fpic">
+
+						<label for="lpic">Picture leftside: </label>
+						<input type="file" id="lpic" name="lpic">
+
+						<label for="rpic">Picture rightside: </label>
+						<input type="file" id="rpic" name="rpic">
+
+					</div><br>
+
+					
 
 					<div class="form-group">
-						<label>Gender: </label><br>
-						<label class="checkbox-inline"> <input type="radio" name="gen" class="form-control" value="Male">Male </label>
-						<label class="checkbox-inline"> <input type="radio" name="gen" class="form-control" value="Fema">Female </label>
+						<label for="category">Category: </label>
+						<input type="text" class="form-control" id="category" name="category" placeholder="Type category here...">
+					</div><br>
+
+					<div class="form-group">
+						<label for="color">Color: </label>
+						<input type="text" class="form-control" id="color" name="color" placeholder="Type color here...">
+					</div><br>
+
+					<div class="form-group">
+						<label for="size">Size: </label>
+						<input type="number" class="form-control" id="size" name="size" placeholder="Type size here...">
+					</div><br>
+
+					<div class="form-group">
+						<label for="Type">Type: </label>
+						<input type="text" class="form-control" id="type" name="type" placeholder="Type of the product...">
+					</div><br>
+
+					<div class="form-group">
+						<label for="quantity">Quantity: </label>
+						<input type="text" class="form-control" id="quantity" name="quantity" placeholder="Type the quantity...">
+					</div><br>
+
+					<div class="form-group">
+						<label for="status">Status: </label>
+						<input type="text" class="form-control" id="status" name="status" placeholder="Type your password here...">
+					</div><br>
+
 						
-					</div>
-
-					<div class="form-group">
-						<label for="address">Address: </label>
-						<input type="text" class="form-control" id="address" name="address" placeholder="Type your Address here...">
-					</div>
-
-					<div class="form-group">
-						<label for="number">Phone number: </label>
-						<input type="text" class="form-control" id="number" name="number" placeholder="Type your phone number here...">
-					</div>
-
-					<div class="form-group">
-						<label for="age">Age: </label>
-						<input type="number" class="form-control" id="age" name="age" placeholder="Type your age here...">
-					</div>
-
-					<div class="form-group">
-						<label for="email">Email: </label>
-						<input type="text" class="form-control" id="email" name="email" placeholder="Type your email here...">
-					</div>
-
-					<div class="form-group">
-						<label for="cemail">Confirm Email: </label>
-						<input type="text" class="form-control" id="cemail" name="cemail" placeholder="Confirm your email here...">
-					</div>
-
-					<div class="form-group">
-						<label for="password">Password: </label>
-						<input type="password" class="form-control" id="password" name="password" placeholder="Type your password here...">
-					</div>
-
-					<div class="form-group">
-						<label for="cpassword">Confirm Password: </label>
-						<input type="password" class="form-control" id="cpassword" name="cpassword" placeholder="Confirm password here...">
-					</div>
-
-					<div class="form-group">
-						
-						<input type="submit" value="Sign up" class="btn btn-success" id="signup">
+						<input type="submit" value="Add product" class="btn btn-success" id="addproduct">
 					</div><br>
 				</form>
 			</div>

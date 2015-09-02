@@ -10,15 +10,19 @@ mysql_select_db("rent", $con);
 
 
 
-$result = mysql_query('SELECT * FROM product WHERE category="Male"');
+$result = mysql_query('SELECT * FROM product WHERE category="Male" AND prodID IN(SELECT prodID FROM topsales)');
 
 $count = 1;
 	while($row = mysql_fetch_array($result)){
 
+		if ($count > 4){
+			
+		}
+
 
 		if($count % 2 == 1){
 			echo "<div class='col-xs-3 col-xs-offset-1'>
-							<div class='row'>
+							<div class='row' id='sales'>
 								<div class='col-xs-12'>";
 
 			echo "<a href='#''><img class='topsale' src='".$row[3]."'> <br />";

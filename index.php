@@ -39,8 +39,8 @@ font-family: "Trebuchet MS", Helvetica, sans-serif;
 
 .middlebar{
 
-background-color: #252525;
-border: 1px solid gray;
+box-shadow: 10px 10px 5px gray;
+border: 0px solid;
 border-radius: 10px;
 margin-bottom: 50px;
 padding-bottom: 50px;
@@ -56,6 +56,11 @@ margin-bottom: 10px;
 width:70%;
 margin-left: 29.5%;
 font-family: "Trebuchet MS", Helvetica, sans-serif;
+}
+
+#sales {
+margin-bottom: 70px;
+margin-top: 30px;
 }
 </style>
 
@@ -146,7 +151,7 @@ font-family: "Trebuchet MS", Helvetica, sans-serif;
 			</div>
 				
 			<div class="col-xs-9">
-				<div class="middlebar">
+				<div class="middlebar well">
 
 					<div class="row" id="topmens">
 						<div id="mens">Mens top sale<img src="new.png" width="70px" height="70px"></div>
@@ -194,7 +199,7 @@ font-family: "Trebuchet MS", Helvetica, sans-serif;
 
 
 
-				<div class="middlebar">
+				<div class="middlebar well">
 
 					<div class="row" id="topwomens">
 						<div id="mens">Womens top sale<img src="new.png" width="70px" height="70px"></div>
@@ -212,7 +217,7 @@ font-family: "Trebuchet MS", Helvetica, sans-serif;
 				</div>
 
 
-				<div class="middlebar">
+				<div class="middlebar well">
 
 					<div class="row" id="topaccessories">
 						<div id="mens">Accessories top sale<img src="new.png" width="70px" height="70px"></div>
