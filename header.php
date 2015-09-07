@@ -1,11 +1,10 @@
 <html>
 <head>
 
-<script src="js/superhero/bootstrap.min.js" type="text/javascript"></script>
-<script src="js/jquery-1.11.1.js" type="text/javascript"></script>
+<!--<script src="js/jquery-1.11.1.js" type="text/javascript"></script>-->
 <script src="dropdown.js" type="text/javascript"></script>
 
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>-->
   
 
 <link rel="stylesheet" href="style.css">
@@ -33,12 +32,12 @@
 	padding: 0;
 	list-style-type: none;
 	background-color: #252525;
-	text-align: center;
+	
 
 }
 #nav ul li {
 	display: inline-block;
-	padding-right: 30px;	
+		
 }
 
 #nav ul li a {
@@ -111,9 +110,26 @@
 
 
 #myCarousel {
-	margin-top: 20px;
+margin-top: 20px;
 }
 
+#search input {
+height: 22px;
+}
+#search {
+margin-left: 40px;
+}
+
+#search button {
+	width: 35px;
+	height: 30px;
+
+
+}
+.glyphicon {
+margin: 0px;
+padding: 0px;
+}
 
 </style>
 <script type="text/javascript">
@@ -133,26 +149,36 @@
 	
 	<div class="container-fluid">
 			<ul id="navmenu">
-				<li><a href="#">Home</a></li>
+				<li><a href="/bootstrap/FashionClothes/">Home</a></li>
 				<li><a href="#">Category <span class="glyphicon glyphicon-chevron-down"></a>
 					<ul>
-						<li><a href="#">All</a></li>
-						<li><a href="#">Men's</a></li>
-						<li><a href="#">Women's</a></li>
+						<li><a href="<?php $category = base64_encode('All'); echo 'category.php?category='.$category;?>">All</a></li>
+						<li><a href="<?php $category = base64_encode('Male'); echo 'category.php?category='.$category;?>">Men's</a></li>
+						<li><a href="<?php $category = base64_encode('Female'); echo 'category.php?category='.$category;?>">Women's</a></li>
 
 					</ul>
 				</li>
 				<li><a href="#">Accessories <span class="glyphicon glyphicon-chevron-down"></span></a>
 					<ul>
-						<li><a href="#">Necklaces</a></li>
-						<li><a href="#">Rings</a></li>
-						<li><a href="#">Earings</a></li>
+						<li><a href="<?php $category = base64_encode('Accessories'); echo 'category.php?category='.$category;?>">All</a></li>
+						<li><a href="<?php $category = base64_encode('Necklace'); echo 'category.php?category='.$category;?>">Necklaces</a></li>
+						<li><a href="<?php $category = base64_encode('Rings'); echo 'category.php?category='.$category;?>">Rings</a></li>
+						<li><a href="<?php $category = base64_encode('Earings'); echo 'category.php?category='.$category;?>">Earings</a></li>
 					</ul>
 
 				</li>
 				<li><a href="#">About us</a></li>
 				<li><a href="#">Contact us</a></li>
+
+							
+				<li><form method="POST" action="" >
+					<div id="search">
+					<input type="text" placeholder="Search" id="txtsearch">
+					<button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-search"></span></button>
+					</div>
+				</form></li>
 			</ul>
+			
 	</div>	
 </div>
 

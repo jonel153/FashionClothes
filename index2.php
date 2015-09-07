@@ -13,7 +13,55 @@
 <link rel="stylesheet" href="style.css">
 
 <style type="text/css">
+#topmens {
+margin-top: 5px;
+margin-bottom: 30px;
+background-color: #62c2e4;
+border: 1px solid gray;
+border-radius: 10px; 
+margin-bottom: 10px;
+width:70%;
+margin-left: 29.5%;
+font-family: "Trebuchet MS", Helvetica, sans-serif;
+}
 
+#topwomens {
+margin-top: 5px;
+
+background-color: #db9dbe;
+border: 1px solid gray;
+border-radius: 10px; 
+margin-bottom: 10px;
+width:70%;
+margin-left: 29.5%;
+font-family: "Trebuchet MS", Helvetica, sans-serif;
+}	
+
+.middlebar{
+
+box-shadow: 10px 10px 5px gray;
+border: 0px solid;
+border-radius: 10px;
+margin-bottom: 50px;
+padding-bottom: 50px;
+}
+
+#topaccessories {
+margin-top: 5px;
+
+background-color: #c4e17f;
+border: 1px solid gray;
+border-radius: 10px; 
+margin-bottom: 10px;
+width:70%;
+margin-left: 29.5%;
+font-family: "Trebuchet MS", Helvetica, sans-serif;
+}
+
+#sales {
+margin-bottom: 70px;
+margin-top: 30px;
+}
 </style>
 
 </head>
@@ -83,9 +131,7 @@
 				<div id="leftbar">
 					<div id="login" class="form-group">
 						<div class="row well">
-						<?php include "session.php" ?>;
-
-													<!--<form method="POST" action="login.php">
+							<form method="POST" action="login.php">
 								<label for="email">Email</label>
 								<input type="text" id="email" name="email" class="form-control" placeholder="Enter email"><br>
 
@@ -97,11 +143,11 @@
 							
 
 								<button type="submit" class="btn btn-primary">Sign in</button>
-							</form>-->
+							</form>
 							
 						</div>
 					</div>
-
+					
 				</div>
 			</div>
 				

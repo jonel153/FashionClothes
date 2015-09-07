@@ -10,13 +10,13 @@ mysql_select_db("rent", $con);
 
 
 
-$result = mysql_query('SELECT * FROM product WHERE category="Female"');
+$result = mysql_query('SELECT * FROM product WHERE category="Female" AND prodID IN(SELECT prodID FROM topsales)');
 
 $count = 1;
 	while($row = mysql_fetch_array($result)){
 
 
-		if($count % 2 == 1){
+		/*if($count % 2 == 1){
 			echo "<div class='col-xs-3 col-xs-offset-1'>
 							<div class='row'>
 								<div class='col-xs-12'>";
@@ -34,8 +34,18 @@ $count = 1;
 			echo "<label class='name'>".$row[1]."</label><br />";
 			echo "<label class='payment'>&#8369;".$row[2]."</label></a>";
 			echo "</div> </div>";
-		}
+		}*/
 
+
+
+echo "<div class='col-xs-4'>
+							<div class='row' id='odd'>
+								<div class='col-xs-12'>";
+
+			echo "<a href='#''><img class='img-thumbnail' src='".$row[3]."'> <br /><br />";
+			echo "<label class='name'>".$row[1]."</label><br />";
+			echo "<label class='payment'>&#8369;".$row[2]."</label></a>";
+			echo "</div> </div> </div>";
 		$count++;
 		
 	}
