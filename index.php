@@ -23,7 +23,7 @@
 <?php include "header.php";?>
 
 <div id="slide">
-	<div class="container">
+	<!--<div class="container">-->
 	  <br>
 	  <div id="myCarousel" class="carousel slide" data-ride="carousel">
 	    <!-- Indicators -->
@@ -72,7 +72,7 @@
 	      <span class="sr-only">Next</span>
 	    </a>
 	  </div>
-	</div>
+	<!--</div>-->
 </div>
 
 <br>

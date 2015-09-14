@@ -41,6 +41,9 @@ ul {
 list-style: none;
 }
 
+#main {
+margin-top: 20px;
+}
 
 </style>
 
@@ -69,7 +72,6 @@ list-style: none;
 <?php include "header.php";?>
 
 
-<br> <br> <br> <br> <br> <br> <br> <br>
 <div id="main">
 	<div class="container-fluid">
 		<div class="row">
@@ -106,11 +108,22 @@ list-style: none;
 							<div id="category">
 							Category<br>
 							<ul>
-
+							<li><input type="checkbox" id="mens">All</li>
 							<li><input type="checkbox" id="mens">Men's</li>
 							<li><input type="checkbox" id="mens">Women's</li>
 							<li><input type="checkbox" id="mens">Accessories</li>
+
 							</ul>
+							<hr>
+							<div id="color">
+								color	
+							</div>
+							<hr>
+							<div id="pricerange">
+								Price
+								<input type="text" class="span2" value="" data-slider-min="-20" data-slider-max="20" data-slider-step="1" data-slider-value="-14" data-slider-orientation="vertical" data-slider-selection="after"data-slider-tooltip="hide">
+
+							</div>
 
 							</div>
 						</div>

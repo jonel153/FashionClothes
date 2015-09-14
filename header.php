@@ -11,113 +11,18 @@
 
 <style type="text/css">
 	
-	#banner{
-	width:100%;
-	height:100px;
-	background-image: url("banner.png");
-	background-size: 100% 100px;
-	margin: 5px;
-	border: 5px solid gray;
-	border-radius: 10px;
-}
-
-#nav {
-	position: relative;
-	z-index: 1;
-}
-
-#nav ul{
-	position: relative;
-	margin: 0;
-	padding: 0;
-	list-style-type: none;
-	background-color: #252525;
-	
-
-}
-#nav ul li {
-	display: inline-block;
-		
-}
-
-#nav ul li a {
-	display: block;
-	height: 45px;
-	width: 150px;
-	color:#fff;
-	line-height: 43px;
-	text-decoration: none;
-}
-
-#nav ul li a:hover {
-	background-color: #ccc;
-	color: #302424;
-	border-radius: 5px;
-	text-decoration: none;
-	transition: background 0.3s linear 0s, color 0.3s linear 0s;
-}
-
-#nav ul ul {
-	position: absolute;
-	display: none;
-	width: 150px;
-	border-radius: 5px;
-}
-
-#nav ul ul li{
-	display: block;
-	background-color: #252525;
-	border-radius: 5px
-}
-
-.glyphicon {
-	margin: 10px;
-
-}
-
-#mens {
-	text-align: right;
-	margin-right: 40px;
-	font-size: 20px;
-}
-
-.topsale {
-	width: 200px;
-	height: 250px;
-
-}
-
-#login button {
-	margin-left: 70%;
-}
-
-.name {
-	text-align: center;
-}
-.payment {
-	text-align: center;
-	color: red;
-}
 
 
 
-.carousel-inner > .item > img,
-.carousel-inner > .item > a > img {
-	width: 40%;
-	height: 350px;
-    margin: auto;
-}
 
 
-#myCarousel {
-margin-top: 20px;
-}
 
 #search input {
 height: 22px;
 }
 #search {
 margin-left: 40px;
+margin-right: 40px;
 }
 
 #search button {
@@ -126,11 +31,19 @@ margin-left: 40px;
 
 
 }
+
+i{
+	margin-left: 30px;
+}
+
 .glyphicon {
 margin: 0px;
 padding: 0px;
 }
 
+.container-fluid {
+	width: 100%;
+}
 </style>
 <script type="text/javascript">
 	
@@ -140,15 +53,12 @@ padding: 0px;
 
 
 <body>
-	<div id="banner">
-	
-
-</div>
 
 <div id="nav">
 	
 	<div class="container-fluid">
 			<ul id="navmenu">
+				<img src="images/logo.png" width="100px" height="100px">
 				<li><a href="/bootstrap/FashionClothes/">Home</a></li>
 				<li><a href="#">Category <span class="glyphicon glyphicon-chevron-down"></a>
 					<ul>
@@ -177,6 +87,11 @@ padding: 0px;
 					<button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-search"></span></button>
 					</div>
 				</form></li>
+				<li></li>
+				<li></li>
+				<a href="signin"><i class="btn btn-primary">Login</i></a>
+				<a href="signup"><i class="btn btn-primary">Sign up</i></a>
+
 			</ul>
 			
 	</div>	
