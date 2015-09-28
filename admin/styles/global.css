@@ -142,29 +142,13 @@ a.mobile:active {
 background-color: #4a4a4a;
 }
 
-@media only screen and (max-width: 320px){
-	.sidebar {
 
-		width: 100%;
-		display: none;
 
-	}
 
-	.content {
-	margin-left: 0px;
-	}
+#nav {
+	position: relative;
 }
 
-@media only screen and (min-width: 320px) {
-	
-	a.mobile {
-		display: none;
-	}
-
-	.sidebar {
-		
 
 
 
-	}
-}

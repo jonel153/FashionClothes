@@ -35,6 +35,7 @@ padding-left: 250px;
           ['Task', 'Hours per Day'],
           ['Male',  male],
           ['Female', female]
+
          
         
         ]);
@@ -46,6 +47,22 @@ padding-left: 250px;
         var chart = new google.visualization.PieChart(document.getElementById('piechart'));
 
         chart.draw(data, options);
+
+
+        var data = google.visualization.arrayToDataTable([
+          ['Product', 'Quantity'],
+          ['Male',  male],
+          ['Female', female]
+         
+        
+        ]);
+
+        var inventory = new google.visualization.Piechart(document.getElementById('inventory'));
+
+        var op = {
+          title: 'inventory Statistics';
+        }
+        chart.draw()
       }
     </script>
   </head>
@@ -69,5 +86,7 @@ padding-left: 250px;
   <input type="hidden" id="female" name="female"> 
     <?php include("sidebar.php");?>
     <div id="piechart" style="width: 900px; height: 500px;"></div>
+
+    <div id="inventory" style="width: 900px; height: 500px;"></div>
   </body>
 </html>

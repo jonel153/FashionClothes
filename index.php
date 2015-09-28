@@ -20,7 +20,8 @@
 
 <body>
 
-<?php include "header.php";?>
+<?php include "session.php";?>
+
 
 <div id="slide">
 	<!--<div class="container">-->
@@ -83,7 +84,7 @@
 				<div id="leftbar">
 					<div id="login" class="form-group">
 						<div class="row well">
-						<?php include "session.php" ?>;
+						
 
 													<!--<form method="POST" action="login.php">
 								<label for="email">Email</label>
@@ -106,7 +107,7 @@
 			</div>
 				
 			<div class="col-xs-9">
-				<div class="middlebar well">
+				<div class="middlebar">
 
 					<div class="row" id="topmens">
 						<div id="mens">Mens top sale<img src="new.png" width="70px" height="70px"></div>
@@ -115,7 +116,7 @@
 					</div>
 					<div class="row">
 					<?php
-					include "load.php";
+					include("load.php");
 					?>
 						<!--<div class="col-xs-4">
 							<div class="row well">
@@ -154,7 +155,7 @@
 
 
 
-				<div class="middlebar well">
+				<div class="middlebar">
 
 					<div class="row" id="topwomens">
 						<div id="mens">Womens top sale<img src="new.png" width="70px" height="70px"></div>
@@ -172,7 +173,7 @@
 				</div>
 
 
-				<div class="middlebar well">
+				<div class="middlebar">
 
 					<div class="row" id="topaccessories">
 						<div id="mens">Accessories top sale<img src="new.png" width="70px" height="70px"></div>

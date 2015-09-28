@@ -61,7 +61,7 @@ margin-top: 20px;
 <!--<script src="js/jquery-1.11.1.js" type="text/javascript"></script>-->
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
   <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>-->
- <!-- <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>-->
+ <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 
 <link rel="stylesheet" href="style.css">
 
@@ -69,8 +69,7 @@ margin-top: 20px;
 
 <body>
 
-<?php include "header.php";?>
-
+<?php include("session.php");?>
 
 <div id="main">
 	<div class="container-fluid">
@@ -80,8 +79,8 @@ margin-top: 20px;
 					<div id="login" class="form-group">
 						<div class="row well">
 						
-
-						<?php include "session.php" ?>;
+						
+						
 
 													<!--<form method="POST" action="login.php">
 								<label for="email">Email</label>
@@ -108,6 +107,7 @@ margin-top: 20px;
 							<div id="category">
 							Category<br>
 							<ul>
+							Male
 							<li><input type="checkbox" id="mens">All</li>
 							<li><input type="checkbox" id="mens">Men's</li>
 							<li><input type="checkbox" id="mens">Women's</li>
@@ -152,7 +152,7 @@ margin-top: 20px;
 					while($row = mysql_fetch_assoc($result)){
 						$name = $row['name'];
 						$price = $row['price'];
-						$picture = $row['picture'];
+						$picture = $row['pic'];
 					}
 
 					echo '<div id="displayzoom">

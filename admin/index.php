@@ -88,106 +88,36 @@ text-shadow: 0px 2px gray;
 	<div id="container">
 		<?php include("sidebar.php");?>
 
-		<div class="content">
 		
-			
-			<div id="box">
-				<div class="box-top">Add product</div>
-				<div class="box-panel">
-					<div id="info">Product Information</div>
-					<hr class="colorgraph">
+ 		<div class="panel panel-default">
+ 			<div class="panel-heading">Admin panel</div>
+ 			<div class="panel-body">
+ 				<form id="registration-form" method="POST" class="form-horizontal" action="">
+ 					<div class="form-group">
+ 						<label class="col-md-2 control-label" for="email">Email</label>
+ 						<div class="col-md-4">
+ 							<input type="text" class="form-control" id="email" name="email" placeholder="Your email address" />
+ 							
+ 						</div>
+ 					</div>
 
-					<div id="reg">
-						<form action="productadd.php" method="POST">
-							<div id="name">
-								<div class="col-xs-6">
-									<label for="pname">Product name: </label>
-									<input type="text" class="form-control" id="pname" name="pname" placeholder="Type product name here...">
-								</div>
+ 					<div class="form-group">
+ 						<label class="col-md-2 control-label" for="password">Password</label>
+ 						<div class="col-md-4">
+ 							<label class="col-md-2 control-label" for="password"></label>
+ 							<input type="password" class="form-control" id="password" name="password" placeholder="Your password" />
+ 						</div>
+ 					</div>
 
-								<div class="col-xs-6">
-									<label for="price">Price: </label>
-									<input type="number" class="form-control" id="price" name="price" placeholder="Type price here...">
-								</div>
-							</div>
-							
-
-							<div id="pic">
-								<div class="form-group" >
-									<div id="front">
-										<div class="col-xs-6">
-											<label for="fpic">Picture Front: </label>
-											<input type="file" id="fpic" name="fpic">
-										</div>
-									
-										<div class="col-xs-6">
-											<label for="bpic">Picture rightside: </label>
-											<input type="file" id="bpic" name="bpic">
-										</div>
-									</div>
-
-									<div id="left">
-										<div class="col-xs-6">
-											<label for="lpic">Picture leftside: </label>
-											<input type="file" id="lpic" name="lpic">
-										</div>
-
-										<div class="col-xs-6">
-											<label for="rpic">Picture backside: </label>
-											<input type="file" id="rpic" name="rpic">
-										</div> 
-									</div>
-									
-								</div>
-							</div>
-
-							
-
-							<div id="cat">
-								<div class="col-xs-4">
-
-									<label for="category">Category: </label>
-									<input type="text" class="form-control" id="category" name="category" placeholder="Type category here...">
-								</div>
-
-								<div class="col-xs-4">
-									<label for="color">Color: </label>
-									<input type="text" class="form-control" id="color" name="color" placeholder="Type color here...">
-								</div>
-								<div class="col-xs-4">
-									<label for="size">Size: </label>
-									<input type="number" class="form-control" id="size" name="size" placeholder="Type size here...">
-								</div>
-							</div>
-
-							<div id="ty">
-								<div class="col-xs-4">
-									<label for="Type">Type: </label>
-									<input type="text" class="form-control" id="type" name="type" placeholder="Type of the product...">
-								</div>
-
-								<div class="col-xs-4">
-									<label for="quantity">Quantity: </label>
-										<input type="text" class="form-control" id="quantity" name="quantity" placeholder="Type the quantity...">
-								</div>
-
-								<div class="col-xs-4">
-									<label for="status">Status: </label>
-									<input type="text" class="form-control" id="status" name="status" placeholder="Type your password here...">
-								</div>
-							</div>
-								
-								<input type="submit" value="Add product" class="btn btn-success" id="addproduct">
-							</div>
-
-						</form>
-					</div>
-				</div>
-			</div>
-
-		</div>
-
-	</div>
-
+ 					<div class="form-group">
+ 						
+ 						<div class="col-md-6 col-md-offset-2">
+ 							<button type="submit" class="btn btn-success">Login</button>
+ 						</div>
+ 					</div>
+ 				</form>
+ 			</div>
+ 		</div>
+ 	</div>
 </body>
 </html>

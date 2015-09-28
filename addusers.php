@@ -1,5 +1,7 @@
 <?php
+
 if($_POST){
+	include_once("header.php");
 	$fname = htmlspecialchars(trim(ucwords(stripslashes($_POST['fname']))));
 	$lname = htmlspecialchars(trim(ucwords(stripslashes($_POST['lname']))));
 	$mname = htmlspecialchars(trim(ucwords(stripslashes($_POST['mname']))));
@@ -18,7 +20,7 @@ if($_POST){
 	$connect = mysql_connect("localhost","root","");
 
 	if(!$connect){
-		die("Couldnt connect! Contact your administrator <br />".mysql_error());
+		die("Couldnt connect! Contact your administrator".mysql_error());
 	}
 
 	mysql_select_db("rent", $connect);
@@ -51,10 +53,7 @@ if($_POST){
 	if(!mysql_query($add, $connect)){
 		echo "Error";
 	}
-
-	include "header.php";
 	echo "Thank you for registration! You will redirect in homepage in 5 seconds.";
-	header("Refresh:6 url=/bootstrap/FashionClothes");
 
 
 

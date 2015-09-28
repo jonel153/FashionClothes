@@ -31,7 +31,7 @@
 				<div id="leftbar">
 					<div id="login" class="form-group">
 						<div class="row well">
-						<?php include "session.php" ?>;
+						
 
 													<!--<form method="POST" action="login.php">
 								<label for="email">Email</label>
