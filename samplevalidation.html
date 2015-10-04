@@ -7,14 +7,36 @@
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-
+<script type="text/javascript" src="http://code.jquery.com/jquery.js"></script>
 
 <script type="text/javascript" src="js/bootstrapValidator.js"></script>
 
 <link rel="stylesheet" href="css/bootstrapValidator.css">
+
+<style type="text/css">
+.male, .female, .acc {
+	display: none;
+}
+.male{
+	background-color: red;
+	width: 40px;
+	height: 40px;
+	float: left;
+	margin-left: 10px;
+}
+#try {
+	
+	
+	
+}
+
+
+
+
+</style>
  </head>
 
- <body>
+ <body class="fuelux">
  	<div class="container">
  		<div class="panel panel-default">
  			<div class="panel-heading">Registration</div>
@@ -77,9 +99,70 @@
 
 
  	</div>
+
+
+ 
+ 	
+ 		Male<input type="radio" id="catmale" name="cat" class="question" value="Male"/>
+ 		Female<input type="radio" id="catfemale" name="cat" class="question" value="Female" />
+ 		Accessories<input type="radio" id="catacc" name="cat" class="question" value="Accessories" />
+ 		
+ 		<div class="male">
+ 			
+ 			Mens subcategory<input type="checkbox" id="try" class="answer" />
+
+ 		</div>
+ 		
+ 		<div class="female"><input type="checkbox" class="answer" />HAHAHA</div>
+ 		<div class="acc"><input type="checkbox" class="answer" />HAHAHAwwww</div>
+ 		<input type="range" min="100" max="10000" step="20" />
+
+
+ </div>
+
+Filter by price interval: <b>€ 10</b> <input id="ex2" type="text" class="span2" value="" data-slider-min="10" data-slider-max="1000" data-slider-step="5" data-slider-value="[250,450]"/> <b>€ 1000</b>
  </body>
 <script type="text/javascript">
+	$("#ex2").slider({});
 	$(document).ready(function(){
+		$("#catmale").click(function(){
+			alert("wew");
+			if($(this).attr("value")=="Male"){
+				$(".male").show();
+				$(".female").hide();
+				$(".acc").hide();
+			}else{
+				$(".male").h
+				ide();
+			}
+
+		});
+
+		$("#catfemale").click(function(){
+			alert("wew");
+			if($(this).attr("value")=="Female"){
+				$(".female").show();
+				$(".male").hide();
+				$(".acc").hide();
+			}else{
+				$(".female").hide();
+			}
+
+		});
+
+		$("#catacc").click(function(){
+			alert("wew");
+			if($(this).attr("value")=="Accessories"){
+				$(".acc").show();
+				$(".male").hide();
+				$(".female").hide();
+			}else{
+				$(".acc").hide();
+			}
+
+		});
+
+
 		var validator = $("#registration-form").bootstrapValidator({
 			feedbackIcons: {
 				valid: "glyphicon glyphicon-ok",
@@ -188,3 +271,8 @@
 </script>
 
  </html>
+
+ <?php
+
+
+ ?>

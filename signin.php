@@ -29,13 +29,31 @@ margin-top: 50px;
 </head>
 
 <body>
+	<?php 
+		if(!isset($_SESSION['email'])){
+			
+		}else{
+			header('Location:index.php');
+		}
+	?>
 	<?php include("header.php");?>
+
 
 	<div class="container">
  		<div class="panel panel-default">
  			<div class="panel-heading">Login</div>
  			<div class="panel-body">
- 				<form id="registration-form" method="POST" class="form-horizontal" action="login.php">
+ 			<?php
+ 			$login=(isset($_GET['error'])) ? (int)$_GET['error']:0;
+
+ 			if($login > 0){
+ 				$message = base64_decode($_REQUEST['message']);
+ 				echo '<div class="alert alert-danger">
+  						<strong>'.$message.'</strong>
+						</div>';
+ 			}
+ 			?>
+ 				<form id="registration-form" method="POST" class="form-horizontal" action="login.php?error=<?php echo $login; ?>">
  					<div class="form-group">
  						<label class="col-md-2 control-label" for="email">Email</label>
  						<div class="col-md-4">

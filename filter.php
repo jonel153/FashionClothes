@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Renee Salud Fashion Clothes</title>
+<title>Filter</title>
 
 <link href="css/bootstrap.css" rel="stylesheet">
 <script src="js/bootstrap.min.js" type="text/javascript"></script>
@@ -60,9 +60,7 @@
 				<div class="middlebar well">
 					<div class="row">
 					<?php
-					$category = base64_decode($_REQUEST['category']);
-					
-					include "loadcategory.php";
+					include "filterprocess.php";
 					?>
 						<!--<div class="col-xs-4">
 							<div class="row well">

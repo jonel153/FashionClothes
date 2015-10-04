@@ -124,7 +124,7 @@ text-shadow: 0px 2px gray;
 					<div id="info">Product Information</div>
 					<hr class="colorgraph">
 
-					<form enctype="multipart/form-data" id="reg" action="productadd.php" method="POST" class="form-vertical">
+					<form enctype="multipart/form-data" id="reg" action="update.php" method="POST" class="form-vertical">
 						
 						
 
@@ -139,7 +139,7 @@ text-shadow: 0px 2px gray;
 							
 								<div class="col-md-6">
 									<label for="price">Price:</label>
-									 <input type="number" name="price" id="price" class="form-control" placeholder="Type price here..." />
+									 <input type="number" name="price" id="price" class="form-control" placeholder="Type price here..." value="<?php echo base64_decode($_REQUEST['price']);?>" />
 								</div>
 							</div>
 						</div>
@@ -247,23 +247,21 @@ text-shadow: 0px 2px gray;
 							<div class="form-group">
 								<div class="col-xs-3">
 									<label for="size">Size: </label>
-									<input type="number" class="form-control" id="size" name="size" placeholder="Type size here...">
+									<input type="number" class="form-control" id="size" name="size" placeholder="Type size here..." value="<?php echo base64_decode($_REQUEST['size']);?>" />
 								</div>
 								
 								<div class="col-xs-4">
 									<label for="quantity">Quantity: </label>
-										<input type="number" class="form-control" id="quantity" name="quantity" placeholder="Type the quantity...">
+										<input type="number" class="form-control" id="quantity" name="quantity" placeholder="Type the quantity..." value="<?php echo base64_decode($_REQUEST['quantity']);?>" />
 								</div>
-
+								<input type="hidden" class="form-control" id="id" name="id" value="<?php echo base64_decode($_REQUEST['id']);?>" />
 								<div class="col-xs-4">
 									<label for="status">Status: </label>
-									<input type="text" class="form-control" id="status" name="status" placeholder="Type status here...">
+									<input type="text" class="form-control" id="status" name="status" placeholder="Type status here..." value="<?php echo base64_decode($_REQUEST['status']);?>" />
 								</div>
 							</div>
 						</div>
-					  
-
-					 <button type="submit" class="btn btn-success">Submit</button>
+					 <button type="submit" class="btn btn-success">Update</button>
 					</form>
 				</div>
 			</div>
@@ -301,14 +299,14 @@ text-shadow: 0px 2px gray;
 						},
 
 						stringLength: {
-							min : 6,
-							max : 35,
+							min : 3,
+							max : 5,
 							message: 'Please input 6 characters'
 						}
 					}
 				},
 
-				fpic: {
+				/*fpic: {
 					message:"Empty",
 					validators: {
 						notEmpty: {
@@ -342,7 +340,7 @@ text-shadow: 0px 2px gray;
 							Message: 'Empty picture'
 						}
 					}
-				},
+				},*/
 
 				category: {
 					validators: {

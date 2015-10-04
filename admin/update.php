@@ -1,22 +1,15 @@
 <?php
 
 if ($_POST){
+	$id = htmlspecialchars(trim(ucwords(stripslashes($_POST['id']))));
 	$name = htmlspecialchars(trim(ucwords(stripslashes($_POST['pname']))));
 	$price = htmlspecialchars(trim(ucwords(stripslashes($_POST['price']))));
 	$category = htmlspecialchars(trim(ucwords(stripslashes($_POST['category']))));
 	$color = htmlspecialchars(trim(ucwords(stripslashes($_POST['color']))));
 	$size = htmlspecialchars(trim(ucwords(stripslashes($_POST['size']))));
-	
+	$type = htmlspecialchars(trim(ucwords(stripslashes($_POST['subcategory']))));
 	$quantity = htmlspecialchars(trim(ucwords(stripslashes($_POST['quantity']))));
 	$status = htmlspecialchars(trim(ucwords(stripslashes($_POST['status']))));
-
-	if($category == "Male"){
-		$type = htmlspecialchars(trim(ucwords(stripslashes($_POST['subcategorymale']))));
-	}else if($category == "Female"){
-		$type = htmlspecialchars(trim(ucwords(stripslashes($_POST['subcategoryfemale']))));
-	}else if($category == "Accessories"){
-		$type = htmlspecialchars(trim(ucwords(stripslashes($_POST['subcategoryacc']))));
-	}
 
 	$con = mysql_connect("localhost", "root", "");
 
@@ -25,38 +18,7 @@ if ($_POST){
 	}
 
 
-
-	mysql_select_db("rent", $con);
-
-	$result = mysql_query("SELECT * FROM product");
-
-	$row = mysql_num_rows($result) + 1;
-
-
-
-	if($row < 10 && $row > 0){
-		$prodid = "prod-"."000"."".$row;
-		
-
-	}else if($row < 100 && $row > 9){
-		$prodid = "prod-"."00"."".$row;
-		
-		
-	}else if($row < 1000 && $row > 99){
-		$prodid = "prod-"."0"."".$row;
-		
-		
-	}else {
-		$prodid = "prod-".$row;
-		
-		
-	}
-
-
-
-	echo $prodid;
-
-	mkdir("../images/product/$prodid", 0777, true);
+	/*mkdir("../images/product/$prodid", 0777, true);
 
 	echo $_FILES['fpic']['name'];
 
@@ -75,12 +37,13 @@ if ($_POST){
 	$righttemp = $_FILES['rpic']['tmp_name'];
 
 	move_uploaded_file($righttemp, "../images/product/$prodid/right.jpeg");
+	*/
 
-	$result = "INSERT INTO product (prodid, name, price, category, color, size, type, quantity, status, activate) VALUES('$prodid', '$name', '$price', '$category', '$color', '$size', '$type', '$quantity', '$status', 'Yes')";
-
-	
+	//$result = "INSERT INTO product (prodid, name, price, category, color, size, type, quantity, status) VALUES('$prodid', '$name', '$price', '$category', '$color', '$size', '$type', '$quantity', '$status')";
+	$result = "UPDATE product SET name='$name', price=$price, category='$category', color='$color', size=$size, type='$type', quantity=$quantity, status='$status' WHERE prodID='$id'";
+	mysql_select_db("rent", $con);
 	if (!mysql_query($result, $con)){
-		echo "error!";
+		echo "error!".mysql_error();
 
 	}else {
 		echo '<link rel="stylesheet" type="text/css" href="styles/global.css" />
@@ -98,7 +61,7 @@ if ($_POST){
 
 		
 		//header("Refresh:20; url=/bootstrap/FashionClothes/admin/newproduct.php");
-		$result = mysql_query("SELECT * FROM images");
+		/*$result = mysql_query("SELECT * FROM images");
 
 		$row = mysql_num_rows($result) + 1;
 
@@ -189,11 +152,11 @@ if ($_POST){
 			}else {
 				echo "success right";
 			}
+		*/
 
 
 
-
-		echo "The product added successfully!...You will redirect to Product page in 5 seconds...";
+		echo "The product updated successfully!...You will redirect to Product page in 5 seconds...";
 	
 		include("sidebar.php");
 

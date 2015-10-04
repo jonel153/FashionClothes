@@ -8,6 +8,7 @@
   <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>-->
   <link href="css/bootstrap.css" rel="stylesheet">
 <script src="js/bootstrap.min.js" type="text/javascript"></script>
+<script src="js/jquery-1.11.1.js" type="text/javascript"></script>
 <script type="text/javascript" src="js/bootstrapValidator.js"></script>
 
 <link rel="stylesheet" href="css/bootstrapValidator.css">
@@ -64,7 +65,7 @@ padding: 0px;
 			<ul id="navmenu">
 				<img src="images/logo.png" width="100px" height="100px">
 				<li><a href="/bootstrap/FashionClothes/">Home</a></li>
-				<li><a href="#">Category<span class="glyphicon glyphicon-chevron-down"></a>
+				<li><a href="#">Category <span class="glyphicon glyphicon-chevron-down"></a>
 					<ul>
 						<li><a href="<?php $category = base64_encode('All'); echo 'category.php?category='.$category;?>">All</a></li>
 						<li><a href="<?php $category = base64_encode('Male'); echo 'category.php?category='.$category;?>">Men's</a></li>
@@ -85,7 +86,7 @@ padding: 0px;
 				<li><a href="#">Contact us</a></li>
 
 				<div id="search">	
-					<li><form method="POST" action="">
+					<li><form method="POST" action="" >
 						
 						<input type="text" placeholder="Search" id="txtsearch" class="form-control"></li>
 						<li><button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-search"></span></button>

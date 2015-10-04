@@ -33,27 +33,102 @@ margin-right: 2px;
 }
 
 #filtering {
-border-right: 1px solid #ccc;
-border-left: 1px solid #ccc;
+
 }
 
 ul {
 list-style: none;
 }
 
+
 #main {
 margin-top: 20px;
+}
+
+#subcategorymale, #subcategoryfemale, #subcategoryacc{
+	display: none;
+	width: 120px;
+}
+
+#category{
+margin-bottom: 100px;
+
+}
+
+#color{
+margin-bottom: 50px;
+}
+#red{
+display: inline-block;
+height: 30px;
+width: 30px;
+background-color: red;
+}
+
+#yellow {
+display: inline-block;
+height: 30px;
+width: 30px;
+background-color: yellow;
+}
+
+#blue {
+display: inline-block;
+
+height: 30px;
+width: 30px;
+background-color: blue;
+}
+
+#green {
+display: inline-block;
+height: 30px;
+width: 30px;
+background-color: green;
+}
+
+
+#black {
+display: inline-block;
+height: 30px;
+width: 30px;
+background-color: black;
+}
+
+#white {
+border: 1px solid gray;
+display: inline-block;
+height: 30px;
+width: 30px;
+background-color: white;
+}
+
+#orange {
+border: 1px solid gray;
+display: inline-block;
+height: 30px;
+width: 30px;
+background-color: orange;
+}
+
+#pricerange {
+margin-bottom: 50px;
+}
+
+.divprice {
+margin-bottom: 30px;
+}
+#btnfilter {
+margin-top: 50px;
 }
 
 </style>
 
 <title>Renee Salud Fashion Clothes</title>
 
-
-
 <!--Script for zooming-->
 <script src='jquery-1.8.3.min.js'></script>
-	<script src='jquery.elevatezoom.js'></script>
+<script src='jquery.elevatezoom.js'></script>
 
  	
 <link href="css/bootstrap.css" rel="stylesheet">
@@ -99,39 +174,83 @@ margin-top: 20px;
 						</div>
 
 						<div class= "row">
-						<div id="filtering"> 
+							<div id="filtering"> 
+								<form enctype="multipart/form-data" id="filter" action="filter.php" method="POST">
+									<div id="filterheader" class="well">Filter</div>
+									
 
-							<div id="filterheader" class="well">Filter</div>
-							
+										<div id="category">
+											Category<br>
+											<ul>
+											
+											<li><input type="radio" name="category" id="mens" value="Male"><label>Men's</label></li>
+											<li><input type="radio" name="category" id="womens" value="Female"><label>Womens</label></li>
+											<li><input type="radio" name="category" id="accessories" value="Accessories"><label>Accessories</label></li>
 
-							<div id="category">
-							Category<br>
-							<ul>
-							Male
-							<li><input type="checkbox" id="mens">All</li>
-							<li><input type="checkbox" id="mens">Men's</li>
-							<li><input type="checkbox" id="mens">Women's</li>
-							<li><input type="checkbox" id="mens">Accessories</li>
+											</ul>
 
-							</ul>
-							<hr>
-							<div id="color">
-								color	
-							</div>
-							<hr>
-							<div id="pricerange">
-								Price
-								<input type="text" class="span2" value="" data-slider-min="-20" data-slider-max="20" data-slider-step="1" data-slider-value="-14" data-slider-orientation="vertical" data-slider-selection="after"data-slider-tooltip="hide">
+												Subcategory
+												<select id="subcategorymale" name="subcategorymale" class="form-control">
+													<option value="">Choose..</option>
+													<option value="Barong">Barong</option>
+												</select>
 
-							</div>
+												<select id="subcategoryfemale" name="subcategoryfemale" class="form-control">
+													<option value="">Choose..</option>
+													<option value="Cocktail">Cocktail</option>
+													<option value="Long Gown">Long Gown</option>
+												</select>
 
+												<select id="subcategoryacc" name="subcategoryacc" class="form-control">
+													<option value="">Choose..</option>
+													<option value="Earings">Earings</option>
+													<option value="Rings">Rings</option>
+												</select>
+												<hr>
+
+										<div id="color" class="col-md-12">
+											Color:
+
+											<div id="red"><input type="checkbox" name="checkred" id="checkred" value="red" /></div>
+											<div id="yellow"><input type="checkbox" name="checkyellow" id="checkyellow" value="Yellow" /></div>
+											<div id="blue"><input type="checkbox" name="checkyblue" id="checkblue" /></div>
+											<div id="green"><input type="checkbox" name="checkgreen" id="checkgreen" /></div>
+											<div id="black"><input type="checkbox" name="checkblack" id="checkblack" /></div>
+											<div id="white"><input type="checkbox" name="checkwhite" id="checkwhite" /></div>
+											
+											<hr>
+										</div>
+										
+
+										<div id="pricerange" class="col-md-8">
+											<div class="divprice">
+											Lowest Range
+												<input type="range" min="100" max="10000" id="pricelow" onchange="fetch()" />
+												<input type="text" id="low" name="low" class="form-control" />
+											</div><br>
+											
+											<div class="divprice">Highest Range
+												<input type="range" min="100" max="10000" id="pricehigh" onchange="fetch1()" />
+												<input type="text" id="high" name="high" class="form-control" />
+												<hr>
+											</div>
+
+
+										</div>
+
+										
+										<div id="size" class="col-md-8">Size
+											<input type="range" min="20" max="40" id="sizeslider" step="1" onchange="fetchsize()" />
+											<input type="text" id="sizerange" name="sizerange" class="form-control" />
+										</div>
+									</div>
+									<div id="btnfilter" class="col-md-5 col-md-offset-6">
+										<input type="submit" value="Filter" class="form-control">
+									</div>								
+								</form>
 							</div>
 						</div>
-
-						</div>
-
 					</div>
-
 				</div>
 			</div>
 			
@@ -152,7 +271,7 @@ margin-top: 20px;
 					while($row = mysql_fetch_assoc($result)){
 						$name = $row['name'];
 						$price = $row['price'];
-						$picture = $row['pic'];
+						$picture = $row['picID'];
 					}
 
 					echo '<div id="displayzoom">
@@ -174,7 +293,7 @@ margin-top: 20px;
 					?>
 			<br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
-						<h1>Basic Zoom Example</h1>
+						<!--<h1>Basic Zoom Example</h1>
 							<img id="img_01" src="zoom/images/wew.jpg" data-zoom-image="zoom/images/large/image2.jpg" />
 
 							<div id="gal1">
@@ -195,7 +314,7 @@ margin-top: 20px;
 							    <img id="img_01" src="mens.jpg" width="100" height="67" />
 							  </a>
 
-							</div><br />
+							</div><br />-->
 
 							
 						
@@ -250,6 +369,48 @@ margin-top: 20px;
 
 
 <script>
+
+function fetch(){
+	var wew = document.getElementById("pricelow").value;
+	document.getElementById("low").value = wew;
+
+}
+
+function fetch1(){
+	var wew = document.getElementById("pricehigh").value;
+	document.getElementById("high").value = wew;
+
+}
+
+function fetchsize(){
+	var wew = document.getElementById("sizeslider").value;
+	document.getElementById("sizerange").value = wew;
+
+}
+
+
+$("#mens").click(function(){
+	$("#subcategorymale").show();
+	$("#subcategoryfemale").hide();
+	$("#subcategoryacc").hide();
+});
+
+$("#womens").click(function(){
+	$("#subcategoryfemale").show();
+	$("#subcategorymale").hide();
+	$("#subcategoryacc").hide();
+
+});
+
+$("#accessories").click(function(){
+	$("#subcategoryacc").show();
+	$("#subcategorymale").hide();
+	$("#subcategoryfemale").hide();
+
+});
+
+
+
   $("#img_01").elevateZoom({gallery:'gal1', cursor: 'pointer', galleryActiveClass: 'active', imageCrossfade: true, loadingIcon: 'http://www.elevateweb.co.uk/spinner.gif'}); 
   
    $("#img_02").elevateZoom({cursor: 'pointer', galleryActiveClass: 'active', imageCrossfade: true, loadingIcon: 'http://www.elevateweb.co.uk/spinner.gif'}); 

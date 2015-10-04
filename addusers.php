@@ -54,7 +54,7 @@ if($_POST){
 		echo "Error";
 	}
 	echo "Thank you for registration! You will redirect in homepage in 5 seconds.";
-
+	
 
 
 }else {

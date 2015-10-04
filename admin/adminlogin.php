@@ -29,8 +29,6 @@ background-color: #2ecc71;
 </head>
 
 <body>
-
-
 	<div class="container">
  		<div class="panel panel-default">
  			<div class="panel-heading">Admin panel</div>
@@ -63,5 +61,61 @@ background-color: #2ecc71;
  		</div>
  	</div>
 </body>
+<script type="text/javascript">
+	$(document).ready(function(){
+		var validator = $("#registration-form").bootstrapValidator({
+			feedbackIcons: {
+				valid: "glyphicon glyphicon-ok",
+				invalid: "glyphicon glyphicon-remove",
+				validating: "glyphicon glyphicon-refresh"
+			},
 
+			fields : {
+
+				username: {
+					message: 'Invalid',
+					validators: {
+						notEmpty: {
+							message: 'Email is required'
+						},
+
+						stringLength: {
+							min : 6, 
+							max: 35,
+							message: "Email address must be between 6 and 35 characters long"
+						},
+
+						emailAddress: {
+							message: "Email address was invalid"
+						},
+					}
+				},
+
+				password : {
+					validators: {
+						notEmpty: {
+							message: "Password is required"
+						},
+						stringLength: {
+							min: 8,
+							message: "Password must be 8 characters long"
+					}
+				},
+
+				
+
+				
+			}
+		
+		});
+
+		validator.on("success.form.bv", function(e){
+			e.preventDefault();
+			$("#registration-form").addClass("hidden");
+			$("#confirmation").removeClass("hidden");
+		});
+
+	});
+
+</script>
 </html>

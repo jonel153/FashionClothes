@@ -62,24 +62,26 @@ padding-right: 15px;
 }
 
 .first {
-padding-bottom: 58px;
-
+padding-bottom: 38px;
+background-color: #16a085;
 }
 
 .second {
-padding-bottom: 58px;
+padding-bottom: 38px;
+
+background-color: #fff;
+color: #3498db;
 }
 
-.second div {
-background-color: #16a085;
-color: #fff;
+.second .glyphicon {
 
 }
 
-.first div {
-background-color: #95a5a6;
-color: #fff;
+.first .glyphicon {
 
+}
+#page {
+text-align: right;
 }
 
 </style>

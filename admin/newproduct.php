@@ -101,6 +101,10 @@ font-size: 1.8em;
 text-shadow: 0px 2px gray;
 }
 
+#subcategorymale, #subcategoryfemale, #subcategoryacc {
+	display: none;
+}
+
 
 </style>
 
@@ -190,12 +194,21 @@ text-shadow: 0px 2px gray;
 							<div class="form-group">
 								<div class="col-xs-4">
 									<label for="subcategory">Sub Category:</label><br>
-									<select id="subcategory" name="subcategory" class="form-control">
+									<select id="subcategorymale" name="subcategorymale" class="form-control">
 										<option value="">Choose..</option>
-										
+										<option value="Barong">Barong</option>
+									</select>
+
+									<select id="subcategoryfemale" name="subcategoryfemale" class="form-control">
+										<option value="">Choose..</option>
 										<option value="Cocktail">Cocktail</option>
 										<option value="Long Gown">Long Gown</option>
-										<option value="Barong">Barong</option>
+									</select>
+
+									<select id="subcategoryacc" name="subcategoryacc" class="form-control">
+										<option value="">Choose..</option>
+										<option value="Earings">Earings</option>
+										<option value="Rings">Rings</option>
 									</select>
 								</div>
 							</div>
@@ -248,6 +261,31 @@ text-shadow: 0px 2px gray;
 
 <script type="text/javascript">
 	$(document).ready(function(){
+
+		$("#category").change(function(){
+			opt = $(this).val();
+			if(opt=="Male"){
+				$("#subcategorymale").show();
+				$("#subcategoryfemale").hide();
+				$("#subcategoryacc").hide();
+			}else if(opt=="Female"){
+				$("#subcategoryfemale").show();
+				$("#subcategorymale").hide();
+				$("#subcategoryacc").hide();
+			}
+			else if(opt=="Accessories"){
+				$("#subcategoryacc").show();
+				$("#subcategorymale").hide();
+				$("#subcategoryfemale").hide();
+			}else{
+				$("#subcategoryacc").hide;
+				$("#subcategorymale").hide();
+				$("#subcategoryfemale").hide();
+			}
+		});
+
+		
+
 		var validator = $("#reg").bootstrapValidator({
 			fields : {
 				pname: {
