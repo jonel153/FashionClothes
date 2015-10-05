@@ -42,10 +42,8 @@ if($_POST){
 		
 	}else if($row < 10000 && $row > 999){
 		$userid = "RSFC-".date("Y")."-"."0"."".$row;
-		
 	}else {
 		$userid = "RSFC-".date("Y")."-".$row; 
-		
 	}
 
 	$add = "INSERT INTO user (userid, fname, lname, mname, gender, address, pnumber, age, email, password, year, month, day) VALUES('$userid','$fname', '$lname', '$mname', '$gender', '$address', '$number', $age, '$email', '$password', $year, $month, $day)";
@@ -53,6 +51,8 @@ if($_POST){
 	if(!mysql_query($add, $connect)){
 		echo "Error";
 	}
+	header("Refresh:4 url=/bootstrap/FashionClothes");
+}
 	echo "Thank you for registration! You will redirect in homepage in 5 seconds.";
 	
 

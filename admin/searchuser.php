@@ -4,10 +4,10 @@ $con = mysql_connect("localhost", "root", "");
 if(!$con){
 	echo "Cant connect to database";
 }
-
+$search = $_POST['txtsearch'];
 mysql_select_db("rent", $con);
 
-$check = mysql_query("SELECT COUNT('userid') FROM user WHERE activate='Yes'");
+$check = mysql_query("SELECT COUNT('userid') FROM user WHERE (fname='".$search."' || lname='".$search."' || mname='".$search."') && activate='Yes'");
 $pages = ceil(mysql_result($check, 0)/15);
 $jump_page = (isset($_GET['page'])) ? (int)$_GET['page']: 1;
 $first = ($jump_page-1) * 15;
@@ -20,7 +20,7 @@ $prev = $jump_page - 1;
 $next = $jump_page + 1;
 
 
-$result = mysql_query("SELECT * FROM user WHERE activate='Yes'");
+$result = mysql_query("SELECT * FROM user WHERE (fname='".$search."' || lname='".$search."' || mname='".$search."') && activate='Yes'");
 $count = 1;
 echo '<div id="prof">';
 while ($row = mysql_fetch_array($result)){

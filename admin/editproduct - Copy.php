@@ -101,10 +101,6 @@ font-size: 1.8em;
 text-shadow: 0px 2px gray;
 }
 
-#subcategorymale, #subcategoryfemale, #subcategoryacc {
-	display: none;
-}
-
 
 </style>
 
@@ -221,21 +217,12 @@ text-shadow: 0px 2px gray;
 							<div class="form-group">
 								<div class="col-xs-4">
 									<label for="subcategory">Sub Category:</label><br>
-									<select id="subcategorymale" name="subcategorymale" class="form-control">
+									<select id="subcategory" name="subcategory" class="form-control">
 										<option value="">Choose..</option>
-										<option value="Barong">Barong</option>
-									</select>
-
-									<select id="subcategoryfemale" name="subcategoryfemale" class="form-control">
-										<option value="">Choose..</option>
+										
 										<option value="Cocktail">Cocktail</option>
 										<option value="Long Gown">Long Gown</option>
-									</select>
-
-									<select id="subcategoryacc" name="subcategoryacc" class="form-control">
-										<option value="">Choose..</option>
-										<option value="Earings">Earings</option>
-										<option value="Rings">Rings</option>
+										<option value="Barong">Barong</option>
 									</select>
 								</div>
 							</div>
@@ -243,73 +230,15 @@ text-shadow: 0px 2px gray;
 							<div class="form-group">
 								<div class="col-xs-4">
 									<label for="color">Color:</label><br>
-
-									<?php
-										$color = $_REQUEST['color'];
-
-										if($color = "Red"){
-											echo '<select id="color" name="color" class="form-control">
-														<option value="">Choose..</option>
-														<option value="Red" selected>Red</option>
-														<option value="Green">Green</option>
-														<option value="Blue">Blue</option>
-														<option value="Black">Black</option>
-														<option value="Pink">Pink</option>
-														<option value="White">White</option>
-													</select>';
-										}else if($color = "Green"){
-											echo '<select id="color" name="color" class="form-control">
-														<option value="">Choose..</option>
-														<option value="Red" >Red</option>
-														<option value="Green" selected>Green</option>
-														<option value="Blue">Blue</option>
-														<option value="Black">Black</option>
-														<option value="Pink">Pink</option>
-														<option value="White">White</option>
-													</select>';
-										}else if($color = "Blue"){
-											echo '<select id="color" name="color" class="form-control">
-														<option value="">Choose..</option>
-														<option value="Red" >Red</option>
-														<option value="Green">Green</option>
-														<option value="Blue" selected>Blue</option>
-														<option value="Black">Black</option>
-														<option value="Pink">Pink</option>
-														<option value="White">White</option>
-													</select>';
-										}else if($color = "Black"){
-											echo '<select id="color" name="color" class="form-control">
-														<option value="">Choose..</option>
-														<option value="Red" >Red</option>
-														<option value="Green">Green</option>
-														<option value="Blue">Blue</option>
-														<option value="Black" selected>Black</option>
-														<option value="Pink">Pink</option>
-														<option value="White">White</option>
-													</select>';
-										}else if($color = "Pink"){
-											echo '<select id="color" name="color" class="form-control">
-														<option value="">Choose..</option>
-														<option value="Red" >Red</option>
-														<option value="Green">Green</option>
-														<option value="Blue" selected>Blue</option>
-														<option value="Black">Black</option>
-														<option value="Pink" selected>Pink</option>
-														<option value="White">White</option>
-													</select>';
-										}else if($color = "White"){
-											echo '<select id="color" name="color" class="form-control">
-														<option value="">Choose..</option>
-														<option value="Red" >Red</option>
-														<option value="Green">Green</option>
-														<option value="Blue">Blue</option>
-														<option value="Black">Black</option>
-														<option value="Pink">Pink</option>
-														<option value="White" selected>White</option>
-													</select>';
-										}
-									?>
-									
+									<select id="color" name="color" class="form-control">
+										<option value="">Choose..</option>
+										<option value="Red">Red</option>
+										<option value="Green">Green</option>
+										<option value="Blue">Blue</option>
+										<option value="Black">Black</option>
+										<option value="Pink">Pink</option>
+										<option value="White">White</option>
+									</select>
 								</div>
 							</div>
 						</div>
@@ -332,9 +261,7 @@ text-shadow: 0px 2px gray;
 								</div>
 							</div>
 						</div>
-					  
-
-					 <button type="submit" class="btn btn-success">Submit</button>
+					 <button type="submit" class="btn btn-success">Update</button>
 					</form>
 				</div>
 			</div>
@@ -346,38 +273,13 @@ text-shadow: 0px 2px gray;
 
 <script type="text/javascript">
 	$(document).ready(function(){
-
-		$("#category").change(function(){
-			opt = $(this).val();
-			if(opt=="Male"){
-				$("#subcategorymale").show();
-				$("#subcategoryfemale").hide();
-				$("#subcategoryacc").hide();
-			}else if(opt=="Female"){
-				$("#subcategoryfemale").show();
-				$("#subcategorymale").hide();
-				$("#subcategoryacc").hide();
-			}
-			else if(opt=="Accessories"){
-				$("#subcategoryacc").show();
-				$("#subcategorymale").hide();
-				$("#subcategoryfemale").hide();
-			}else{
-				$("#subcategoryacc").hide;
-				$("#subcategorymale").hide();
-				$("#subcategoryfemale").hide();
-			}
-		});
-
-		
-
 		var validator = $("#reg").bootstrapValidator({
 			fields : {
 				pname: {
 					message: 'Invalid',
 					validators: {
 						notEmpty: {
-							message: 'Name is required'
+							message: 'Email is required'
 						},
 
 						stringLength: {
@@ -398,13 +300,47 @@ text-shadow: 0px 2px gray;
 
 						stringLength: {
 							min : 3,
-							max : 35,
-							message: 'Please input 3 characters'
+							max : 5,
+							message: 'Please input 6 characters'
 						}
 					}
 				},
 
-				
+				/*fpic: {
+					message:"Empty",
+					validators: {
+						notEmpty: {
+							message: 'Empty picture'
+						}
+					}
+				},
+
+				bpic: {
+					message: 'Empty',
+					validators: {
+						notEmpty: {
+							Message: 'Empty picture'
+						}
+					}
+				},
+
+				lpic: {
+					message: 'Empty',
+					validators: {
+						notEmpty: {
+							Message: 'Empty picture'
+						}
+					}
+				},
+
+				rpic: {
+					message: 'Empty',
+					validators: {
+						notEmpty: {
+							Message: 'Empty picture'
+						}
+					}
+				},*/
 
 				category: {
 					validators: {

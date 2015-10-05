@@ -64,7 +64,7 @@ include "header.php";
 			<hr class="colorgraph">
 
 			<div id="reg">
-				<form action="addusers.php" method="POST">
+				<form action="productadd.php" method="POST">
 					<div class="form-group">
 						<label for="pname">Product name: </label>
 						<input type="text" class="form-control" id="pname" name="pname" placeholder="Type product name here...">

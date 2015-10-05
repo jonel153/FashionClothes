@@ -154,11 +154,16 @@ if ($_POST){
 			}
 		*/
 
-
-
-		echo "The product updated successfully!...You will redirect to Product page in 5 seconds...";
-	
+		header("Refresh:5;url=product.php");
 		include("sidebar.php");
+		echo '<div class="alert alert-success">
+					<strong>Product updated successfully!. You will redirect in 3 seconds....</strong>
+				</div>';
+
+
+		
+	
+		
 
 	}
 

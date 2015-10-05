@@ -39,7 +39,6 @@ padding-bottom: 40px;
 
 #box {
 font-size: 1.2em;
-margin-bottom: 0px;
 }
 
 #box span{
@@ -49,10 +48,6 @@ float: right;
 .box-top a{
 text-decoration: none;
 color: #fff;
-
-}
-.box-top{
-	margin-bottom: 0px;
 }
 
 #prof img {
@@ -68,32 +63,28 @@ padding-right: 15px;
 
 .first {
 padding-bottom: 38px;
-background-color: #16a085;
+margin-bottom: 20px;
+background-color: #95a5a6;
+color: #fff;
 }
 
 .second {
 padding-bottom: 38px;
-
-background-color: #fff;
-color: #3498db;
+margin-bottom: 20px;
+background-color: #16a085;
+color: #fff;
 }
 
-.second .glyphicon {
+.second div {
+
+
 
 }
 
-.first .glyphicon {
+.first div {
+
 
 }
-#page {
-text-align: right;
-}
-
-#search {
-margin-top: 10px;
-}
-
-
 </style>
 
 </head>
@@ -111,12 +102,14 @@ margin-top: 10px;
 		
 			
 			<div id="box">
-				<div class="box-top"><img src="images/member.png">Product List<a href="newproduct.php"><span class="glyphicon glyphicon-plus-sign">Add</span></a>
+				<div class="box-top"><img src="images/member.png">Member list<a href="#"><span class="glyphicon glyphicon-plus-sign">Add</span></a>
+
 				</div>
+
 				<div id="search">
-					<form method="POST" action="search.php" class="form-vertical">
+					<form method="POST" action="searchinguser.php" class="form-vertical">
 							<div class="form-group">
-								<div class="col-md-3 col-md-offset-8">
+								<div class="col-md-3 col-md-offset-7">
 									<br><input type="text" placeholder="Search" id="txtsearch" name="txtsearch" class="form-control">
 								</div>
 							</div>
@@ -127,23 +120,27 @@ margin-top: 10px;
 								</div>
 							</div>
 
+							<div class="col-md-1">
+								<br><a href="Member.php" class="btn btn-default" role="button">Clear</a>
+							</div>
+
 					</form>
 				</div>
+
+
 				<div class="box-panel">
 					<br><br>
-
 					<div id="tableheader">
 						<ul>
-						<li class="col-xs-3">Name</li>
-						<li class="col-xs-3">Price</li>
-						<li class="col-xs-3">Category</li>
-						<li class="col-xs-3">Quantity</li>
+						<li class="col-xs-3">Picture</li>
+						<li class="col-xs-3">First name</li>
+						<li class="col-xs-3">Last name</li>
+						<li class="col-xs-3">Middle name</li>
 
 						</ul>
-
 					</div>
 					<br>
-					<?php include("productlist.php");?>
+					<?php include("searchuser.php");?>
 					<!--<div id="prof" class="row">
 						<div class="first">
 							<div class="col-xs-3">

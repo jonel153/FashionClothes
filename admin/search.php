@@ -116,8 +116,8 @@ margin-top: 10px;
 				<div id="search">
 					<form method="POST" action="search.php" class="form-vertical">
 							<div class="form-group">
-								<div class="col-md-3 col-md-offset-8">
-									<br><input type="text" placeholder="Search" id="txtsearch" name="txtsearch" class="form-control">
+								<div class="col-md-3 col-md-offset-7">
+									<br><input type="text" placeholder="Search" id="txtsearch" class="form-control">
 								</div>
 							</div>
 
@@ -125,12 +125,15 @@ margin-top: 10px;
 								<div class="col-md-1">
 									<br><button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-search"></span></button>
 								</div>
-							</div>
 
+								<div class="col-md-1">
+									<br><a href="product.php" class="btn btn-default" role="button">Clear</a>
+								</div>
+							</div>
 					</form>
 				</div>
 				<div class="box-panel">
-					<br><br>
+					<br><br><br>
 
 					<div id="tableheader">
 						<ul>
@@ -143,7 +146,7 @@ margin-top: 10px;
 
 					</div>
 					<br>
-					<?php include("productlist.php");?>
+					<?php include("searchproduct.php");?>
 					<!--<div id="prof" class="row">
 						<div class="first">
 							<div class="col-xs-3">

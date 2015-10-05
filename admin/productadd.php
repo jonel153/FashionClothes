@@ -187,22 +187,25 @@ if ($_POST){
 				echo "error!".mysql_error();
 
 			}else {
-				echo "success right";
+				
 			}
 
 
 
-
-		echo "The product added successfully!...You will redirect to Product page in 5 seconds...";
-	
+		header("Refresh:5;url=product.php");
 		include("sidebar.php");
+		echo '<div class="alert alert-success">
+					<strong>Product successfully added!. You will redirect in 3 seconds....</strong>
+				</div>';
+		
+	
+		
 
 	}
 
 
 }else{
-	echo $_FILES['fpic']['name'];
-	//header("Location:index.php");
+	
 }
 
 ?>

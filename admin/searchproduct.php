@@ -6,15 +6,16 @@ if(!$con){
 }
 
 mysql_select_db("rent", $con);
+$search = $_POST['txtsearch'];
 
-$check = mysql_query("SELECT COUNT('prodID') FROM product WHERE activate='Yes'");
+$check = mysql_query("SELECT COUNT('prodID') FROM product WHERE name='".$search."' && activate='Yes'");
 $pages = ceil(mysql_result($check, 0)/15);
 $jump_page = (isset($_GET['page'])) ? (int)$_GET['page']: 1;
 $first = ($jump_page-1) * 15;
 
 
 
-$result = mysql_query("SELECT * FROM product WHERE activate='Yes' LIMIT $first, 15");
+$result = mysql_query("SELECT * FROM product WHERE name='".$search."' && activate='Yes' LIMIT $first, 15");
 $count = 1;
 $prev = $jump_page - 1;
 $next = $jump_page + 1;
@@ -90,14 +91,19 @@ while ($row = mysql_fetch_array($result)){
 
 }
 
-echo'</div>';
+
 
 if($pages == 1){
 
-}else {
+
+}else{
+	
+	echo'</div>';
+
 	echo '<div id="page"><ul class="pagination">';
+
 	if($jump_page > 1){
-		echo "<li><a href='product.php?page=$prev'>Prev</a></li>";
+	echo "<li><a href='product.php?page=$prev'>Prev</a></li>";
 	}
 
 
@@ -113,7 +119,6 @@ if($pages == 1){
 	}
 	echo '</ul></div>';
 }
-
 
 	
 ?>

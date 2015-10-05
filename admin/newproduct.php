@@ -292,11 +292,11 @@ text-shadow: 0px 2px gray;
 					message: 'Invalid',
 					validators: {
 						notEmpty: {
-							message: 'Email is required'
+							message: 'Name is required'
 						},
 
 						stringLength: {
-							min : 6,
+							min : 3,
 							max : 35,
 							message: 'Please input 6 characters'
 						}
@@ -308,11 +308,11 @@ text-shadow: 0px 2px gray;
 					message: 'Invalid',
 					validators: {
 						notEmpty: {
-							message: 'Email is required'
+							message: 'PRice is required'
 						},
 
 						stringLength: {
-							min : 6,
+							min : 3,
 							max : 35,
 							message: 'Please input 6 characters'
 						}
@@ -358,7 +358,7 @@ text-shadow: 0px 2px gray;
 				category: {
 					validators: {
 						notEmpty: {
-							Message: 'Empty picture'
+							Message: 'Empty category'
 						}
 					}
 				},
@@ -367,7 +367,7 @@ text-shadow: 0px 2px gray;
 					message: 'Empty',
 					validators: {
 						notEmpty: {
-							Message: 'Empty picture'
+							Message: 'Empty subcategory'
 						}
 					}
 				},
@@ -377,7 +377,7 @@ text-shadow: 0px 2px gray;
 					message: 'Empty',
 					validators: {
 						notEmpty: {
-							Message: 'Empty picture'
+							Message: 'Empty color'
 						}
 					}
 				},
@@ -387,7 +387,7 @@ text-shadow: 0px 2px gray;
 					message: 'Empty',
 					validators: {
 						notEmpty: {
-							Message: 'Empty picture'
+							Message: 'Empty size'
 						}
 					}
 				},
@@ -397,7 +397,7 @@ text-shadow: 0px 2px gray;
 					message: 'Empty',
 					validators: {
 						notEmpty: {
-							Message: 'Empty picture'
+							Message: 'Empty quantity'
 						}
 					}
 				},
@@ -407,7 +407,7 @@ text-shadow: 0px 2px gray;
 					message: 'Empty',
 					validators: {
 						notEmpty: {
-							Message: 'Empty picture'
+							Message: 'Empty status'
 						}
 					}
 				},

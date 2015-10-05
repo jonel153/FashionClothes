@@ -49,11 +49,11 @@ margin-top: 50px;
  			if($login > 0){
  				$message = base64_decode($_REQUEST['message']);
  				echo '<div class="alert alert-danger">
-  						<strong>'.$message.'</strong>
+  						<center><strong>'.$message.'</strong></center>
 						</div>';
  			}
  			?>
- 				<form id="registration-form" method="POST" class="form-horizontal" action="login.php?error=<?php echo $login; ?>">
+ 				<form id="registration" method="POST" class="form-horizontal" action="login.php?error=<?php echo $login; ?>">
  					<div class="form-group">
  						<label class="col-md-2 control-label" for="email">Email</label>
  						<div class="col-md-4">
@@ -84,10 +84,40 @@ margin-top: 50px;
 
 <script type="text/javascript">
 	$(document).ready(function(){
+		alert("wew");
+		var validator = $("#registration").bootstrapValidator({
+			framework: 'bootstrap',
 
+			feedbackIcons: {
+				valid: "glyphicon glyphicon-ok",
+				
+				validating: "glyphicon glyphicon-refresh"
+			},
 
+			fields: {
+				email: {
+					validators: {
+						notEmpty: {
+							message: 'Email is required'
+						},
+
+						emailAddress: {
+							message: 'Invalid email address'
+						}
+					}
+				},
+
+				password: {
+					validators: {
+						notEmpty: {
+							message: 'Password required'
+
+						},
+					}
+				}
+			}
+		});
 	});
-
 </script>
 </html>
 

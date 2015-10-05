@@ -62,23 +62,27 @@ padding-right: 15px;
 }
 
 .first {
-padding-bottom: 58px;
-
+padding-bottom: 38px;
+margin-bottom: 20px;
+background-color: #95a5a6;
+color: #fff;
 }
 
 .second {
-padding-bottom: 58px;
+padding-bottom: 38px;
+margin-bottom: 20px;
+background-color: #16a085;
+color: #fff;
 }
 
 .second div {
-background-color: #16a085;
-color: #fff;
+
+
 
 }
 
 .first div {
-background-color: #95a5a6;
-color: #fff;
+
 
 }
 </style>
@@ -101,7 +105,27 @@ color: #fff;
 				<div class="box-top"><img src="images/member.png">Member list<a href="#"><span class="glyphicon glyphicon-plus-sign">Add</span></a>
 
 				</div>
+
+				<div id="search">
+					<form method="POST" action="searchinguser.php" class="form-vertical">
+							<div class="form-group">
+								<div class="col-md-3 col-md-offset-8">
+									<br><input type="text" placeholder="Search" id="txtsearch" name="txtsearch" class="form-control">
+								</div>
+							</div>
+
+							<div class="form-group">
+								<div class="col-md-1">
+									<br><button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-search"></span></button>
+								</div>
+							</div>
+
+					</form>
+				</div>
+
+
 				<div class="box-panel">
+					<br><br>
 					<div id="tableheader">
 						<ul>
 						<li class="col-xs-3">Picture</li>
@@ -111,6 +135,7 @@ color: #fff;
 
 						</ul>
 					</div>
+					<br>
 					<?php include("memberlist.php");?>
 					<!--<div id="prof" class="row">
 						<div class="first">
