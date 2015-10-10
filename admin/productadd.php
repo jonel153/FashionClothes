@@ -1,25 +1,16 @@
 <?php
-
 if ($_POST){
 	$name = htmlspecialchars(trim(ucwords(stripslashes($_POST['pname']))));
 	$price = htmlspecialchars(trim(ucwords(stripslashes($_POST['price']))));
 	$category = htmlspecialchars(trim(ucwords(stripslashes($_POST['category']))));
 	$color = htmlspecialchars(trim(ucwords(stripslashes($_POST['color']))));
 	$size = htmlspecialchars(trim(ucwords(stripslashes($_POST['size']))));
-	
+	$subcategory = htmlspecialchars(trim(ucwords(stripslashes($_POST['subcategory']))));
 	$quantity = htmlspecialchars(trim(ucwords(stripslashes($_POST['quantity']))));
-	$status = htmlspecialchars(trim(ucwords(stripslashes($_POST['status']))));
+	
 
-	if($category == "Male"){
-		$type = htmlspecialchars(trim(ucwords(stripslashes($_POST['subcategorymale']))));
-	}else if($category == "Female"){
-		$type = htmlspecialchars(trim(ucwords(stripslashes($_POST['subcategoryfemale']))));
-	}else if($category == "Accessories"){
-		$type = htmlspecialchars(trim(ucwords(stripslashes($_POST['subcategoryacc']))));
-	}
-
+	echo $category ." ". $subcategory;
 	$con = mysql_connect("localhost", "root", "");
-
 	if(!$con){
 		die("Error!");
 	}
@@ -76,11 +67,11 @@ if ($_POST){
 
 	move_uploaded_file($righttemp, "../images/product/$prodid/right.jpeg");
 
-	$result = "INSERT INTO product (prodid, name, price, category, color, size, type, quantity, status, activate) VALUES('$prodid', '$name', '$price', '$category', '$color', '$size', '$type', '$quantity', '$status', 'Yes')";
 
+	$result = "INSERT INTO product (prodid, name, price, categoryID, subcategoryID, activate) VALUES('$prodid', '$name', '$price', '$category', '$subcategory', 'Yes')";
 	
 	if (!mysql_query($result, $con)){
-		echo "error!";
+		echo "error! product".mysql_error();
 
 	}else {
 		echo '<link rel="stylesheet" type="text/css" href="styles/global.css" />
@@ -95,6 +86,11 @@ if ($_POST){
 <script type="text/javascript" src="scripts/general.js">
 	
 </script>';
+
+
+
+
+
 
 		
 		//header("Refresh:20; url=/bootstrap/FashionClothes/admin/newproduct.php");
@@ -115,7 +111,7 @@ if ($_POST){
 		$addpic = "INSERT INTO images (imgID, prodID, imageLocation, imageType) VALUES('$imgID', '$prodid', 'images/product/$prodid/front.jpeg', 'Front')";
 		
 			if (!mysql_query($addpic, $con)){
-				echo "error!".mysql_error();
+				echo "error! images".mysql_error();
 
 			}else {
 				echo "success front";
@@ -139,8 +135,7 @@ if ($_POST){
 			
 			if (!mysql_query($addpic, $con)){
 				echo "error!".mysql_error();
-
-			}else {
+			}else {	
 				echo "success back";
 			}
 
@@ -156,7 +151,7 @@ if ($_POST){
 		}else if($row < 1000 && $row > 99){
 			$imgID = "img-"."0"."".$row;
 		}else {
-			$imgID = "img-".$row;		
+			$imgID = "img-".$row;			
 		}
 			$addpic = "INSERT INTO images (imgID, prodID, imageLocation, imageType) VALUES('$imgID', '$prodid', 'images/product/$prodid/left.jpeg', 'Left')";
 			
@@ -192,7 +187,7 @@ if ($_POST){
 
 
 
-		header("Refresh:5;url=product.php");
+		header("Refresh:5;url=product.php?id=");
 		include("sidebar.php");
 		echo '<div class="alert alert-success">
 					<strong>Product successfully added!. You will redirect in 3 seconds....</strong>

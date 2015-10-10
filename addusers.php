@@ -51,8 +51,7 @@ if($_POST){
 	if(!mysql_query($add, $connect)){
 		echo "Error";
 	}
-	header("Refresh:4 url=/bootstrap/FashionClothes");
-}
+
 	echo "Thank you for registration! You will redirect in homepage in 5 seconds.";
 	
 

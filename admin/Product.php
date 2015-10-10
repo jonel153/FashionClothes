@@ -7,8 +7,8 @@
 
 <script src="js/bootstrap.min.js" type="text/javascript"></script>
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>-->
 
 
 <meta name="viewport" content="width=device-width, initial-scale: 1.0, user-scalabe=0" />
@@ -93,7 +93,7 @@ text-align: right;
 margin-top: 10px;
 }
 
-
+s
 </style>
 
 </head>
@@ -111,7 +111,7 @@ margin-top: 10px;
 		
 			
 			<div id="box">
-				<div class="box-top"><img src="images/member.png">Product List<a href="newproduct.php"><span class="glyphicon glyphicon-plus-sign">Add</span></a>
+				<div class="box-top"><img src="images/member.png">Product List<a href="choosecategory.php"><span class="glyphicon glyphicon-plus-sign">Add</span></a>
 				</div>
 				<div id="search">
 					<form method="POST" action="search.php" class="form-vertical">
@@ -126,7 +126,6 @@ margin-top: 10px;
 									<br><button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-search"></span></button>
 								</div>
 							</div>
-
 					</form>
 				</div>
 				<div class="box-panel">

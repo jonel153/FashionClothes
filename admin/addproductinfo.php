@@ -144,12 +144,12 @@ display: none;
 		
 			
 			<div id="box">
-				<div class="box-top">Add product</div>
+				<div class="box-top"><strong>Step 4: </strong>Add product info</div>
 				<div class="box-panel">
 					<div id="info">Product Information</div>
 					<hr class="colorgraph">
 
-					<form enctype="multipart/form-data" id="reg" action="productadd.php" method="POST" class="form-vertical">
+					<form enctype="multipart/form-data" id="reg" action="addproductinfoprocess.php" method="POST" class="form-vertical">
 
 						<div id="first">
 							<div class="form-group">
@@ -166,73 +166,10 @@ display: none;
 								</div>
 							</div>
 						</div>
-
-						<div id="second">
-							<div class="form-group">
-								<div class="col-xs-6">
-									<label for="fpic">Picture Front: </label>
-									<input type="file" id="fpic" name="fpic">
-								</div>
-
-								<div class="col-xs-6">
-									<label for="bpic">Picture backside: </label>
-									<input type="file" id="bpic" name="bpic">
-								</div>
-							</div>
-						</div>
-
-
-						<div id="third">
-							<div class="form-group">
-								<div class="col-xs-6">
-									<label for="lpic">Picture leftside: </label>
-									<input type="file" id="lpic" name="lpic">
-								</div>
-
-								<div class="col-xs-6">
-									<label for="rpic">Picture Rightside: </label>
-									<input type="file" id="rpic" name="rpic">
-								</div> 
-							</div>
-						</div>
-
-
-						<div id="fourth">
-							
-
-							<div class="form-group">
-								<div class="col-xs-4">
-									<label for="color">Color:</label><br>
-									<select id="color" name="color" class="form-control">
-										<option value="">Choose..</option>
-										<option value="Red">Red</option>
-										<option value="Green">Green</option>
-										<option value="Blue">Blue</option>
-										<option value="Black">Black</option>
-										<option value="Pink">Pink</option>
-										<option value="White">White</option>
-									</select>
-								</div>
-							</div>
-						</div>
-
-						<div id="fifth">
-							<div class="form-group">
-								<div class="col-xs-3">
-									<label for="size">Size: </label>
-									<input type="number" class="form-control" id="size" name="size" placeholder="Type size here...">
-								</div>
-								
-								<div class="col-xs-4">
-									<label for="quantity">Quantity: </label>
-										<input type="number" class="form-control" id="quantity" name="quantity" placeholder="Type the quantity...">
-								</div>
-
-							</div>
-						</div>
 					  
 						<?php 
 							echo'<input type="hidden" id="category" name="category" value="'.$_POST["category"].'">';
+
 							echo'<input type="hidden" id="subcategory" name="subcategory" value="'.$_POST["subcategory"].'">';
 
 						?>

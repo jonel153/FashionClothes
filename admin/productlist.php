@@ -1,6 +1,5 @@
 <?php
 $con = mysql_connect("localhost", "root", "");
-
 if(!$con){
 	echo "Cant connect to database";
 }
@@ -14,7 +13,7 @@ $first = ($jump_page-1) * 15;
 
 
 
-$result = mysql_query("SELECT * FROM product WHERE activate='Yes' LIMIT $first, 15");
+$result = mysql_query("SELECT prodID, name, price FROM product WHERE activate='Yes' LIMIT $first, 15");
 $count = 1;
 $prev = $jump_page - 1;
 $next = $jump_page + 1;
@@ -25,20 +24,16 @@ while ($row = mysql_fetch_array($result)){
 	$prodID = $row[0];
 	$name = $row[1];
 	$price =  $row[2];
-	$picID =  $row[3];
-	$category = $row[4];
-	$color =  $row[5];
-	$size =  $row[6];
-	$type =  $row[7];
-	$quantity = $row[8];
-	$status = $row[9];
-
 	
 	
 	if($count%2 == 1) {	
 		echo'<div class="first">
 			<div class="col-xs-3">
 			
+				<label>'.$prodID.'</label>
+			</div>
+
+			<div class="col-xs-3">
 				<label>'.$name.'</label>
 			</div>
 
@@ -46,16 +41,8 @@ while ($row = mysql_fetch_array($result)){
 				<label>&#8369;'.$price.'</label>
 			</div>
 
-			<div class="col-xs-3">
-				<label>'.$category.'</label>
-			</div>
-
-			<div class="col-xs-2">
-				<label>'.$quantity.'</label>
-			</div>
-
 			<div class="col-xs-1">
-				<label> <a href="editproduct.php?name='.base64_encode($name).'&price='.base64_encode($price).'&category='.base64_encode($category).'&subcategory='.base64_encode($type).'&color='.base64_encode($color).'&size='.base64_encode($size).'&quantity='.base64_encode($quantity).'&status='.base64_encode($status).'&id='.base64_encode($prodID).'"><i class="glyphicon glyphicon-pencil"></i></a></label>&nbsp &nbsp <a href="delete.php?id='.base64_encode($prodID).'"> <i class="glyphicon glyphicon-remove"></i></a>
+				<label><a href="addcolor.php?id='.base64_encode($prodID).'"><i class="glyphicon glyphicon-pencil"></i></a></label>&nbsp &nbsp <a href="delete.php?id='.base64_encode($prodID).'"> <i class="glyphicon glyphicon-remove"></i></a>
 			</div>
 			
 			
@@ -63,27 +50,23 @@ while ($row = mysql_fetch_array($result)){
 	}else if($count%2 == 0){
 		echo '<div class="second">
 				<div class="col-xs-3">
-					
-					<label>'.$name.'</label>
+			
+					<label>'.$prodID.'</label>
 				</div>
 
 				<div class="col-xs-3">
-					<label>&#8369;'.$price.'</label>
+					<label>&#8369;'.$name.'</label>
 				</div>
 
 				<div class="col-xs-3">
-					<label>'.$category.'</label>
-				</div>
-
-				<div class="col-xs-2">
-					<label>'.$quantity.'</label>
+					<label>'.$price.'</label>
 				</div>
 
 				<div class="col-xs-1">
-					<label> <a href="editproduct.php?name='.base64_encode($name).'&price='.base64_encode($price).'&category='.base64_encode($category).'&subcategory='.base64_encode($type).'&color='.base64_encode($color).'&size='.base64_encode($size).'&quantity='.base64_encode($quantity).'&status='.base64_encode($status).'&id='.base64_encode($prodID).'"><i class="glyphicon glyphicon-pencil"></i></a></label>&nbsp &nbsp<a href="delete.php?id='.base64_encode($prodID).'"> <i class="glyphicon glyphicon-remove"></i></a>
+					<label> <a href=addcolor.php?id='.base64_encode($prodID).'"><i class="glyphicon glyphicon-pencil"></i></a></label>&nbsp &nbsp <a href="delete.php?id='.base64_encode($prodID).'"> <i class="glyphicon glyphicon-remove"></i></a>
 				</div>
-			
-			</div>';
+				
+				</div>';
 	}
 
 	$count++;

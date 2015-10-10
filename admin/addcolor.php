@@ -86,12 +86,13 @@ padding-bottom: 125px;
 
 #second	 {
 padding-bottom: 125px;
+display: none;
 
 }
 
 #third	 {
 padding-bottom: 125px;
-
+display: none;
 }
 
 #fourth {
@@ -132,9 +133,6 @@ display: none;
 </head>
 
 <body>
-
-	
-
 	<a class="mobile" href="#">MENU</a>
 	
 	<div id="container">
@@ -144,97 +142,46 @@ display: none;
 		
 			
 			<div id="box">
-				<div class="box-top">Add product</div>
+				<div class="box-top"><strong></strong>Add color available to this product:</div>
 				<div class="box-panel">
-					<div id="info">Product Information</div>
+					<div id="info"></div>
 					<hr class="colorgraph">
 
-					<form enctype="multipart/form-data" id="reg" action="productadd.php" method="POST" class="form-vertical">
-
-						<div id="first">
-							<div class="form-group">
-								<div class="col-md-6">
-									<label for="pname">Product name: </label>
-									<input type="text" class="form-control" id="pname" name="pname" placeholder="Type product name here..." />
-								</div>
-							
-
-							
-								<div class="col-md-6">
-									<label for="price">Price:</label>
-									 <input type="number" name="price" id="price" class="form-control" placeholder="Type price here..." />
-								</div>
-							</div>
-						</div>
-
-						<div id="second">
-							<div class="form-group">
-								<div class="col-xs-6">
-									<label for="fpic">Picture Front: </label>
-									<input type="file" id="fpic" name="fpic">
-								</div>
-
-								<div class="col-xs-6">
-									<label for="bpic">Picture backside: </label>
-									<input type="file" id="bpic" name="bpic">
-								</div>
-							</div>
-						</div>
-
-
-						<div id="third">
-							<div class="form-group">
-								<div class="col-xs-6">
-									<label for="lpic">Picture leftside: </label>
-									<input type="file" id="lpic" name="lpic">
-								</div>
-
-								<div class="col-xs-6">
-									<label for="rpic">Picture Rightside: </label>
-									<input type="file" id="rpic" name="rpic">
-								</div> 
-							</div>
-						</div>
-
+					<form enctype="multipart/form-data" id="reg" action="addsize.php" method="POST" class="form-vertical">
 
 						<div id="fourth">
-							
-
 							<div class="form-group">
 								<div class="col-xs-4">
 									<label for="color">Color:</label><br>
 									<select id="color" name="color" class="form-control">
 										<option value="">Choose..</option>
-										<option value="Red">Red</option>
-										<option value="Green">Green</option>
-										<option value="Blue">Blue</option>
-										<option value="Black">Black</option>
-										<option value="Pink">Pink</option>
-										<option value="White">White</option>
+										<?php
+											$prodID = base64_decode($_REQUEST['id']);
+											include("databaseconnection.php");
+											$result = mysql_query("SELECT colorID, colorname FROM color WHERE prodID ='".$prodID."'");
+
+											while($row = mysql_fetch_assoc($result)){
+												$color = $row['colorname'];
+												$colorID = $row['colorID'];
+
+												echo '<option value="'.$colorID.'">'.$color.'</option>';
+
+											}
+
+										?>	
 									</select>
-								</div>
+								</div>	
 							</div>
 						</div>
 
-						<div id="fifth">
-							<div class="form-group">
-								<div class="col-xs-3">
-									<label for="size">Size: </label>
-									<input type="number" class="form-control" id="size" name="size" placeholder="Type size here...">
-								</div>
-								
-								<div class="col-xs-4">
-									<label for="quantity">Quantity: </label>
-										<input type="number" class="form-control" id="quantity" name="quantity" placeholder="Type the quantity...">
-								</div>
 
-							</div>
-						</div>
-					  
+						
+
+						
 						<?php 
-							echo'<input type="hidden" id="category" name="category" value="'.$_POST["category"].'">';
-							echo'<input type="hidden" id="subcategory" name="subcategory" value="'.$_POST["subcategory"].'">';
-
+							echo'<input type="hidden" id="prodID" name="prodID" value="'.base64_decode($_REQUEST["id"]).'">';
+							echo'<input type="hidden" id="colorID" name="colorID" value="'.$colorID.'">';
+							echo base64_decode($_REQUEST['id']);
 						?>
 					 <button type="submit" class="btn btn-success" id="submit">Submit</button>
 					</form>
@@ -249,6 +196,22 @@ display: none;
 
 
 <script type="text/javascript">
+
+	$(document).ready(function(){
+
+		$("#color").change(function(){
+			opt = $(this).val();
+			if(opt==""){
+				$("#second").hide();
+				$("#third").hide();
+			}else{
+				$("#second").show();
+				$("#third").show();
+			}
+			
+		});
+	});
+		
 
 	/*$(document).ready(function(){
 		var validator = $("#reg").bootstrapValidator({
