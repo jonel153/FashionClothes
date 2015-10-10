@@ -162,7 +162,7 @@ display: none;
 							
 								<div class="col-md-6">
 									<label for="price">Price:</label>
-									 <input type="number" name="price" id="price" class="form-control" placeholder="Type price here..." />
+									<input type="number" name="price" id="price" class="form-control" placeholder="Type price here..." />
 								</div>
 							</div>
 						</div>

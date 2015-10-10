@@ -262,6 +262,7 @@ margin-top: 50px;
 					<?php
 
 					$id = base64_decode($_REQUEST['view']);
+					$color = base64_decode($_REQUEST['color']);
 
 					$wew = mysql_connect("localhost", "root", "");
 					mysql_select_db("rent", $wew);
@@ -271,23 +272,47 @@ margin-top: 50px;
 					while($row = mysql_fetch_assoc($result)){
 						$name = $row['name'];
 						$price = $row['price'];
-						$picture = $row['picID'];
+
+						$picture = "images/product/$id/$color/";
+						echo $picture;
 					}
 
 					echo '<div id="displayzoom">
 					<h1>'.$name.'</h1>
-					<br /><h4>Front view</h4>
-					<img id="img_02" src="'.$picture.'" data-zoom-image="'.$picture.'" width="411" height="274" />
 					<h3>Price: '.$price.'</h3>
+					<br /><h4>Front view</h4>
+					<img id="img_01" src="'.$picture.'front.jpeg" data-zoom-image="'.$picture.'front.jpeg" width="411" height="274" />
+					
 					</div>';
 
 					echo'<br> <br>';
 
 					echo '<div id="displayzoom">
 					<h1>'.$name.'</h1>
-					<br /><h4>Side view</h4>
-					<img id="img_03" src="'.$picture.'" data-zoom-image="'.$picture.'" width="411" height="274" />
 					<h3>Price: '.$price.'</h3>
+					<br /><h4>Front view</h4>
+					<img id="img_02" src="'.$picture.'back.jpeg" data-zoom-image="'.$picture.'back.jpeg" width="411" height="274" />
+					
+					</div>';
+
+					echo'<br> <br>';
+
+					echo '<div id="displayzoom">
+					<h1>'.$name.'</h1>
+					<h3>Price: '.$price.'</h3>
+					<br /><h4>Front view</h4>
+					<img id="img_03" src="'.$picture.'left.jpeg" data-zoom-image="'.$picture.'left.jpeg" width="411" height="274" />
+					
+					</div>';
+
+					echo'<br> <br>';
+
+					echo '<div id="displayzoom">
+					<h1>'.$name.'</h1>
+					<h3>Price: '.$price.'</h3>
+					<br /><h4>Front view</h4>
+					<img id="img_04" src="'.$picture.'right.jpeg" data-zoom-image="'.$picture.'right.jpeg" width="411" height="274" />
+					
 					</div>';
 
 					?>
@@ -415,6 +440,7 @@ $("#accessories").click(function(){
   
    $("#img_02").elevateZoom({cursor: 'pointer', galleryActiveClass: 'active', imageCrossfade: true, loadingIcon: 'http://www.elevateweb.co.uk/spinner.gif'}); 
    $("#img_03").elevateZoom({cursor: 'pointer', galleryActiveClass: 'active', imageCrossfade: true, loadingIcon: 'http://www.elevateweb.co.uk/spinner.gif'}); 
+   $("#img_04").elevateZoom({cursor: 'pointer', galleryActiveClass: 'active', imageCrossfade: true, loadingIcon: 'http://www.elevateweb.co.uk/spinner.gif'}); 
 
 </script>
 

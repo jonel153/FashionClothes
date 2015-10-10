@@ -174,13 +174,10 @@ display: none;
 							</div>
 						</div>
 
-
-						
-
 						
 						<?php 
-							echo'<input type="hidden" id="prodID" name="prodID" value="'.base64_decode($_REQUEST["id"]).'">';
-							echo'<input type="hidden" id="colorID" name="colorID" value="'.$colorID.'">';
+							echo'<input type="hidden" id="prodID" name="prodID" value="'.$prodID.'">';
+							
 							echo base64_decode($_REQUEST['id']);
 						?>
 					 <button type="submit" class="btn btn-success" id="submit">Submit</button>

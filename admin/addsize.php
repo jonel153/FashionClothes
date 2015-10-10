@@ -22,7 +22,6 @@
 <!--<script type="text/javascript" src="scripts/general.js"></script>-->
 
 
-
 <link href="css/bootstrap.css" rel="stylesheet">
 <script src="js/bootstrap.min.js" type="text/javascript"></script>
 <script src="js/jquery-1.11.1.js" type="text/javascript"></script>
@@ -147,41 +146,44 @@ display: none;
 					<div id="info"></div>
 					<hr class="colorgraph">
 
-					<form enctype="multipart/form-data" id="reg" action="" method="POST" class="form-vertical">
+					<form enctype="multipart/form-data" id="reg" action="addquantityprocess.php" method="POST" class="form-vertical">
 
-						<div id="fourth">
+						<div id="first">
 							<div class="form-group">
-								<div class="col-xs-4">
-									<label for="category">Choose Sizes:</label><br>
+								<div class="col-md-6">
+									<label for="color">Size:</label><br>
+									<select id="size" name="size" class="form-control">
+										<option value="">Choose..</option>
 									<?php
 										$colorID = $_POST['color'];
 										include("databaseconnection.php");
 										$result = mysql_query("SELECT sizeID, size FROM sizetbl WHERE colorID ='".$colorID."'");
 										echo mysql_num_rows($result);
-										echo $colorID;
 										while($row = mysql_fetch_assoc($result)){
 											$size = $row['size'];
 											$sizeID = $row['sizeID'];
 
-											echo '<div><input type="checkbox" name="size[]" value="'.$size.'">'.$size.'</div>';
+											echo '<option value="'.$sizeID.'">'.$size.'</option>';
 										}
-									?>		
-								</div>	
-							</div>
-						</div>
+										echo $_POST['prodID'];
+									?>	
+									</select>
 
+									<?php echo'<input type="hidden" id="prodID" name="prodID" value="'.$_POST['prodID'].'">';
+										echo'<input type="hidden" id="colorID" name="colorID" value="'.$colorID.'">';?>						
+								</div>
+								
 
-						<div id="haha">
-							<div class="form-group">
-								<div class="col-xs-12">
-									
+							
+								<div class="col-md-6">
+									<label for="price">Quantity:</label>
+									<input type="number" name="quantity" id="quantity" class="form-control" placeholder="Type quantity here..." />
 								</div>
 							</div>
 						</div>
 
 						
-						
-					 <button type="submit" class="btn btn-success" id="submit">Submit</button>
+					 <button type="submit" class="btn btn-success" id="submit" name="submit">Submit</button>
 					</form>
 					<br><br>
 
